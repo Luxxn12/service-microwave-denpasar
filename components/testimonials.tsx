@@ -42,7 +42,7 @@ export default function Testimonials() {
       location: "Seminyak",
       rating: 5,
       comment:
-        "Sudah 2 kali menggunakan jasa ServiceMicrowave dan selalu puas dengan hasilnya. Teknisi ramah dan berpengalaman. Harga juga transparan tanpa biaya tersembunyi.",
+        "Sudah 2 kali menggunakan jasa ServiceMicrowaveDenpasar dan selalu puas dengan hasilnya. Teknisi ramah dan berpengalaman. Harga juga transparan tanpa biaya tersembunyi.",
       image: "/placeholder.svg?height=60&width=60",
     },
   ]

@@ -156,7 +156,7 @@ export default function Footer() {
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-900/30 mr-3">
                   <Mail className="h-5 w-5 text-purple-400" />
                 </div>
-                <span>info@ServiceMicrowave.com</span>
+                <span>info@ServiceMicrowaveDenpasar.com</span>
               </li>
               <li className="flex items-start">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-900/30 mr-3">
@@ -174,7 +174,7 @@ export default function Footer() {
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          <p className="text-gray-400">© {new Date().getFullYear()} ServiceMicrowave. Hak Cipta Dilindungi.</p>
+          <p className="text-gray-400">© {new Date().getFullYear()} ServiceMicrowaveDenpasar. Hak Cipta Dilindungi.</p>
           <div className="mt-4 md:mt-0">
             <button
               onClick={scrollToTop}

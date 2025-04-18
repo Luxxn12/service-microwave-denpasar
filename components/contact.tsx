@@ -129,7 +129,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="font-medium text-sm sm:text-base">Email</p>
-                      <p className="text-gray-500 dark:text-gray-400 text-sm">info@ServiceMicrowave.com</p>
+                      <p className="text-gray-500 dark:text-gray-400 text-sm">info@ServiceMicrowaveDenpasar.com</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-4">

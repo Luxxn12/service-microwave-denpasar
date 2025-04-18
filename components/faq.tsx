@@ -44,7 +44,7 @@ export default function Faq() {
     {
       question: "Bagaimana cara memesan layanan perbaikan microwave?",
       answer:
-        "Anda dapat memesan layanan perbaikan microwave melalui beberapa cara: menghubungi kami di nomor telepon/WhatsApp 085737655537, mengisi formulir pemesanan di website kami, atau mengirim email ke info@ServiceMicrowave.com. Setelah itu, kami akan menghubungi Anda untuk konfirmasi jadwal kunjungan teknisi.",
+        "Anda dapat memesan layanan perbaikan microwave melalui beberapa cara: menghubungi kami di nomor telepon/WhatsApp 085737655537, mengisi formulir pemesanan di website kami, atau mengirim email ke info@ServiceMicrowaveDenpasar.com. Setelah itu, kami akan menghubungi Anda untuk konfirmasi jadwal kunjungan teknisi.",
     },
   ]
 
