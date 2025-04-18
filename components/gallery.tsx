@@ -1,40 +1,84 @@
 "use client"
 
-import { useRef } from "react"
+import type React from "react"
+
+import { useRef, useState } from "react"
 import Image from "next/image"
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import { useInView } from "framer-motion"
+import { X, ChevronLeft, ChevronRight } from "lucide-react"
+import image1 from "../public/1.jpeg"
+import image2 from "../public/2.jpeg"
+import image3 from "../public/3.jpeg"
+import image4 from "../public/4.jpeg"
+import image5 from "../public/5.jpeg"
+import image6 from "../public/6.jpeg"
 
 export default function Gallery() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
+  const [selectedImage, setSelectedImage] = useState<number | null>(null)
 
   const images = [
     {
-      src: "/placeholder.svg?height=300&width=400",
+      src: image1,
       alt: "Teknisi sedang memperbaiki microwave",
     },
     {
-      src: "/placeholder.svg?height=300&width=400",
+      src: image2,
       alt: "Microwave sebelum perbaikan",
     },
     {
-      src: "/placeholder.svg?height=300&width=400",
-      alt: "Microwave setelah perbaikan",
+      src: image3,
+      alt: "Perbaiki Alat Panggang Roti",
     },
     {
-      src: "/placeholder.svg?height=300&width=400",
-      alt: "Workshop perbaikan microwave",
+      src: image4,
+      alt: "Workshop perbaikan",
     },
     {
-      src: "/placeholder.svg?height=300&width=400",
-      alt: "Tim teknisi kami",
+      src: image5,
+      alt: "Perbaikan Mesin Microwave",
     },
     {
-      src: "/placeholder.svg?height=300&width=400",
-      alt: "Pelanggan puas dengan layanan kami",
+      src: image6,
+      alt: "Perbaikan Electronic lainnya",
     },
   ]
+
+
+  const openModal = (index: number) => {
+    setSelectedImage(index)
+    // Prevent body scrolling when modal is open
+    document.body.style.overflow = "hidden"
+  }
+
+  const closeModal = () => {
+    setSelectedImage(null)
+    // Re-enable body scrolling
+    document.body.style.overflow = "auto"
+  }
+
+  const navigateImage = (direction: "next" | "prev") => {
+    if (selectedImage === null) return
+
+    if (direction === "next") {
+      setSelectedImage((selectedImage + 1) % images.length)
+    } else {
+      setSelectedImage((selectedImage - 1 + images.length) % images.length)
+    }
+  }
+
+  // Handle keyboard navigation
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Escape") {
+      closeModal()
+    } else if (e.key === "ArrowRight") {
+      navigateImage("next")
+    } else if (e.key === "ArrowLeft") {
+      navigateImage("prev")
+    }
+  }
 
   const container = {
     hidden: { opacity: 0 },
@@ -84,9 +128,10 @@ export default function Gallery() {
           {images.map((image, index) => (
             <motion.div
               key={index}
-              className="group relative overflow-hidden rounded-xl shadow-lg"
+              className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer"
               variants={item}
               whileHover={{ y: -10, transition: { duration: 0.2 } }}
+              onClick={() => openModal(index)}
             >
               <div className="relative aspect-video overflow-hidden rounded-xl">
                 <Image
@@ -105,6 +150,82 @@ export default function Gallery() {
           ))}
         </motion.div>
       </div>
+
+      {/* Image Modal */}
+      <AnimatePresence>
+        {selectedImage !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 md:p-8"
+            onClick={closeModal}
+            onKeyDown={handleKeyDown}
+            tabIndex={0}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="relative max-w-5xl w-full h-full flex flex-col items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close button */}
+              <button
+                onClick={closeModal}
+                className="absolute top-2 right-2 md:top-4 md:right-4 z-10 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
+                aria-label="Close modal"
+              >
+                <X className="h-6 w-6" />
+              </button>
+
+              {/* Navigation buttons */}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation()
+                  navigateImage("prev")
+                }}
+                className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
+                aria-label="Previous image"
+              >
+                <ChevronLeft className="h-6 w-6" />
+              </button>
+
+              <button
+                onClick={(e) => {
+                  e.stopPropagation()
+                  navigateImage("next")
+                }}
+                className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
+                aria-label="Next image"
+              >
+                <ChevronRight className="h-6 w-6" />
+              </button>
+
+              {/* Image container */}
+              <div className="relative w-full h-full flex items-center justify-center">
+                <Image
+                  src={images[selectedImage].src || "/placeholder.svg"}
+                  alt={images[selectedImage].alt}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 100vw, 80vw"
+                />
+              </div>
+
+              {/* Caption */}
+              <div className="absolute bottom-4 left-0 right-0 text-center">
+                <p className="text-white bg-black/50 inline-block px-4 py-2 rounded-lg">{images[selectedImage].alt}</p>
+                <p className="text-white/70 text-sm mt-2">
+                  {selectedImage + 1} / {images.length}
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   )
 }
