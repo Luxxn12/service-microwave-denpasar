@@ -247,7 +247,9 @@ export default function Contact() {
                 ) : (
                   <form onSubmit={onSubmit} className="space-y-4">
                     <div className="space-y-2">
-                      <Label htmlFor="name">Nama Lengkap</Label>
+                      <Label htmlFor="name">Nama Lengkap
+                        <span className="text-red-500">*</span>
+                      </Label>
                       <Input
                         id="name"
                         name="from_name"
@@ -259,7 +261,9 @@ export default function Contact() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="email">Email</Label>
+                      <Label htmlFor="email">Email
+                        <span className="text-red-500">*</span>
+                      </Label>
                       <Input
                         id="email"
                         name="email"
@@ -267,11 +271,14 @@ export default function Contact() {
                         placeholder="Masukkan email Anda"
                         value={formData.email}
                         onChange={handleChange}
+                        required
                         className="border-gray-200 dark:border-gray-700 focus:border-blue-500 focus:ring-blue-500"
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="message">Deskripsi Kerusakan</Label>
+                      <Label htmlFor="message">Deskripsi Kerusakan
+                        <span className="text-red-500">*</span>
+                      </Label>
                       <Textarea
                         id="message"
                         name="message"
