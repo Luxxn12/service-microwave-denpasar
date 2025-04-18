@@ -6,11 +6,20 @@ import { ThemeProvider } from "@/components/theme-provider"
 
 const inter = Inter({ subsets: ["latin"] })
 
+// export const metadata: Metadata = {
+//   title: "ServiceMicrowave - Service Microwave Panggilan Cepat & Terpercaya",
+//   description: "Service Microwave Denpasar Layanan perbaikan microwave profesional dengan teknisi berpengalaman di seluruh Bali.",
+// }
 export const metadata: Metadata = {
-  title: "ServiceMicrowave - Service Microwave Panggilan Cepat & Terpercaya",
-  description: "Layanan perbaikan microwave profesional dengan teknisi berpengalaman di seluruh Bali.",
-    generator: 'v0.dev'
+  title: "Service Microwave Denpasar - Panggilan Cepat & Bergaransi",
+  description: "Service Microwave Denpasar | Perbaikan cepat, bergaransi, dan profesional untuk seluruh wilayah Bali.",
+  keywords: ["service microwave denpasar", "perbaikan microwave denpasar", "jasa service microwave bali"],
+  robots: "index, follow",
+  alternates: {
+    canonical: "https://www.servicemicrowavedenpasar.com/",
+  },
 }
+
 
 export default function RootLayout({
   children,
