@@ -5,7 +5,7 @@ import { CheckCircle, Award, Shield, Clock } from "lucide-react"
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
-import heroIcon from "/public/1.jpeg"
+import heroIcon from "/public/8.png"
 
 export default function About() {
   const ref = useRef(null)

@@ -25,6 +25,10 @@ export default function Gallery() {
       alt: "Teknisi sedang memperbaiki microwave",
     },
     {
+      src: image6,
+      alt: "Perbaikan Microwave oleh Teknisi",
+    },
+    {
       src: image2,
       alt: "Microwave sebelum perbaikan",
     },
@@ -39,10 +43,6 @@ export default function Gallery() {
     {
       src: image5,
       alt: "Perbaikan Mesin Microwave",
-    },
-    {
-      src: image6,
-      alt: "Perbaikan Electronic lainnya",
     },
   ]
 
