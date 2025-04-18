@@ -156,7 +156,7 @@ export default function Footer() {
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-900/30 mr-3">
                   <Mail className="h-5 w-5 text-purple-400" />
                 </div>
-                <span>info@ServiceMicrowaveDenpasar.com</span>
+                <span> servicemicrowavedenpasar@gmail.com</span>
               </li>
               <li className="flex items-start">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-900/30 mr-3">

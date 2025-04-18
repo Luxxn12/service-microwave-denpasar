@@ -1,60 +1,33 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { useRef, useState } from "react"
-import { Phone, Mail, MapPin, Send, CheckCircle } from "lucide-react"
-import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
+import type React from "react";
+import { useRef, useState } from "react";
+import { Phone, Mail, MapPin, Send, CheckCircle } from "lucide-react";
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
 
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
+import { toast } from "sonner";
 
 export default function Contact() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
+    from_name: "",
     email: "",
-    address: "",
     message: "",
-  })
-
-  const [isSubmitted, setIsSubmitted] = useState(false)
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log(formData)
-    setIsSubmitted(true)
-
-    setTimeout(() => {
-      setIsSubmitted(false)
-      setFormData({
-        name: "",
-        phone: "",
-        email: "",
-        address: "",
-        message: "",
-      })
-    }, 3000)
-  }
+  });
 
   const container = {
     hidden: { opacity: 0 },
@@ -64,12 +37,70 @@ export default function Contact() {
         staggerChildren: 0.1,
       },
     },
-  }
+  };
 
   const item = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  }
+  };
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const { from_name, email, message } = formData;
+
+    if (!from_name || !email || !message) {
+      return toast.error("Mohon isi semua kolom form.");
+    }
+
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(email)) {
+      return toast.error("Alamat email tidak valid.");
+    }
+
+    setLoading(true);
+
+    const payload = new FormData();
+    payload.append("access_key", "142c1755-0e78-4d1b-93c6-518291508184");
+    payload.append("from_name", from_name);
+    payload.append("email", email);
+    payload.append("message", message);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: payload,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        toast.success("Form berhasil dikirim!");
+        setFormData({ from_name: "", email: "", message: "" });
+        setIsSubmitted(true);
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 3000);
+      } else {
+        console.error("Error:", data);
+        toast.error("Gagal mengirim form.");
+      }
+    } catch (error) {
+      console.error("Unexpected error:", error);
+      toast.error("Terjadi kesalahan saat mengirim.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <section
@@ -94,7 +125,8 @@ export default function Contact() {
               Hubungi Kami
             </h2>
             <p className="max-w-[900px] text-sm sm:text-base md:text-xl text-gray-500 dark:text-gray-400">
-              Butuh bantuan perbaikan microwave? Hubungi kami sekarang untuk layanan cepat dan profesional.
+              Butuh bantuan perbaikan microwave? Hubungi kami sekarang untuk
+              layanan cepat dan profesional.
             </p>
           </div>
         </motion.div>
@@ -111,7 +143,9 @@ export default function Contact() {
               <Card className="border-0 shadow-lg bg-white dark:bg-gray-800">
                 <CardHeader>
                   <CardTitle>Informasi Kontak</CardTitle>
-                  <CardDescription>Hubungi kami melalui salah satu kontak di bawah ini</CardDescription>
+                  <CardDescription>
+                    Hubungi kami melalui salah satu kontak di bawah ini
+                  </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div className="flex items-center space-x-4">
@@ -119,8 +153,12 @@ export default function Contact() {
                       <Phone className="h-6 w-6 text-blue-600 dark:text-blue-400" />
                     </div>
                     <div>
-                      <p className="font-medium text-sm sm:text-base">Telepon / WhatsApp</p>
-                      <p className="text-gray-500 dark:text-gray-400 text-sm">085737655537</p>
+                      <p className="font-medium text-sm sm:text-base">
+                        Telepon / WhatsApp
+                      </p>
+                      <p className="text-gray-500 dark:text-gray-400 text-sm">
+                        085737655537
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-4">
@@ -129,7 +167,9 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="font-medium text-sm sm:text-base">Email</p>
-                      <p className="text-gray-500 dark:text-gray-400 text-sm">info@ServiceMicrowaveDenpasar.com</p>
+                      <p className="text-gray-500 dark:text-gray-400 text-sm">
+                        servicemicrowavedenpasar@gmail.com
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-4">
@@ -180,7 +220,10 @@ export default function Contact() {
             <Card className="border-0 shadow-lg bg-white dark:bg-gray-800 h-full">
               <CardHeader>
                 <CardTitle>Formulir Pemesanan</CardTitle>
-                <CardDescription>Isi formulir di bawah ini untuk memesan layanan perbaikan microwave</CardDescription>
+                <CardDescription>
+                  Isi formulir di bawah ini untuk memesan layanan perbaikan
+                  microwave
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 {isSubmitted ? (
@@ -193,32 +236,23 @@ export default function Contact() {
                     <div className="w-16 h-16 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mb-4">
                       <CheckCircle className="h-8 w-8 text-green-600 dark:text-green-400" />
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold mb-2">Pesan Terkirim!</h3>
+                    <h3 className="text-lg sm:text-xl font-bold mb-2">
+                      Pesan Terkirim!
+                    </h3>
                     <p className="text-gray-500 dark:text-gray-400 text-sm sm:text-base">
-                      Terima kasih telah menghubungi kami. Tim kami akan segera menghubungi Anda.
+                      Terima kasih telah menghubungi kami. Tim kami akan segera
+                      menghubungi Anda.
                     </p>
                   </motion.div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-4">
+                  <form onSubmit={onSubmit} className="space-y-4">
                     <div className="space-y-2">
                       <Label htmlFor="name">Nama Lengkap</Label>
                       <Input
                         id="name"
-                        name="name"
+                        name="from_name"
                         placeholder="Masukkan nama lengkap Anda"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        className="border-gray-200 dark:border-gray-700 focus:border-blue-500 focus:ring-blue-500"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="phone">Nomor Telepon</Label>
-                      <Input
-                        id="phone"
-                        name="phone"
-                        placeholder="Masukkan nomor telepon Anda"
-                        value={formData.phone}
+                        value={formData.from_name}
                         onChange={handleChange}
                         required
                         className="border-gray-200 dark:border-gray-700 focus:border-blue-500 focus:ring-blue-500"
@@ -237,18 +271,6 @@ export default function Contact() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="address">Alamat</Label>
-                      <Input
-                        id="address"
-                        name="address"
-                        placeholder="Masukkan alamat lengkap Anda"
-                        value={formData.address}
-                        onChange={handleChange}
-                        required
-                        className="border-gray-200 dark:border-gray-700 focus:border-blue-500 focus:ring-blue-500"
-                      />
-                    </div>
-                    <div className="space-y-2">
                       <Label htmlFor="message">Deskripsi Kerusakan</Label>
                       <Textarea
                         id="message"
@@ -262,10 +284,17 @@ export default function Contact() {
                     </div>
                     <Button
                       type="submit"
+                      disabled={loading}
                       className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
                     >
-                      <Send className="mr-2 h-4 w-4" />
-                      Kirim Pesan
+                      {loading ? (
+                        "Mengirim..."
+                      ) : (
+                        <>
+                          <Send className="w-4 h-4 mr-2" />
+                          Kirim Pesan
+                        </>
+                      )}
                     </Button>
                   </form>
                 )}
@@ -275,5 +304,5 @@ export default function Contact() {
         </div>
       </div>
     </section>
-  )
+  );
 }
