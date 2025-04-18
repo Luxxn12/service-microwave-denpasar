@@ -20,42 +20,21 @@ export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null)
 
   const images = [
-    {
-      src: image1,
-      alt: "Teknisi sedang memperbaiki microwave",
-    },
-    {
-      src: image6,
-      alt: "Perbaikan Microwave oleh Teknisi",
-    },
-    {
-      src: image2,
-      alt: "Microwave sebelum perbaikan",
-    },
-    {
-      src: image3,
-      alt: "Perbaiki Alat Panggang Roti",
-    },
-    {
-      src: image4,
-      alt: "Workshop perbaikan",
-    },
-    {
-      src: image5,
-      alt: "Perbaikan Mesin Microwave",
-    },
+    { src: image1, alt: "Teknisi sedang memperbaiki microwave" },
+    { src: image6, alt: "Perbaikan Microwave oleh Teknisi" },
+    { src: image2, alt: "Microwave sebelum perbaikan" },
+    { src: image3, alt: "Perbaiki Alat Panggang Roti" },
+    { src: image4, alt: "Workshop perbaikan" },
+    { src: image5, alt: "Perbaikan Mesin Microwave" },
   ]
-
 
   const openModal = (index: number) => {
     setSelectedImage(index)
-    // Prevent body scrolling when modal is open
     document.body.style.overflow = "hidden"
   }
 
   const closeModal = () => {
     setSelectedImage(null)
-    // Re-enable body scrolling
     document.body.style.overflow = "auto"
   }
 
@@ -97,7 +76,6 @@ export default function Gallery() {
 
   return (
     <section id="galeri" className="w-full py-12 md:py-24 lg:py-32 relative overflow-hidden">
-      {/* Background elements */}
       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-blue-100/50 dark:bg-blue-900/20 rounded-full blur-3xl opacity-70 -z-10" />
       <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-purple-100/50 dark:bg-purple-900/20 rounded-full blur-3xl opacity-70 -z-10" />
 
@@ -109,11 +87,13 @@ export default function Gallery() {
           transition={{ duration: 0.5 }}
         >
           <div className="space-y-2">
-            <div className="inline-block rounded-lg bg-blue-100 dark:bg-blue-900/30 px-3 py-1 text-sm text-blue-600 dark:text-blue-400 mb-2">
+            <div className="inline-block rounded-lg bg-blue-100 dark:bg-blue-900/30 px-3 py-1 text-xs sm:text-sm text-blue-600 dark:text-blue-400 mb-2">
               Galeri Kami
             </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Galeri Foto</h2>
-            <p className="max-w-[900px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tighter">
+              Galeri Foto
+            </h2>
+            <p className="max-w-[900px] text-gray-500 dark:text-gray-400 text-sm md:text-base lg:text-base xl:text-xl">
               Lihat dokumentasi pekerjaan kami dalam memperbaiki berbagai jenis microwave.
             </p>
           </div>
@@ -143,7 +123,7 @@ export default function Gallery() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 text-white translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <p className="font-medium">{image.alt}</p>
+                  <p className="font-medium text-xs sm:text-sm">{image.alt}</p>
                 </div>
               </div>
             </motion.div>
@@ -172,42 +152,34 @@ export default function Gallery() {
               className="relative max-w-5xl w-full h-full flex flex-col items-center justify-center"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Close button */}
               <button
                 onClick={closeModal}
-                className="absolute top-2 right-2 md:top-4 md:right-4 z-10 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
-                aria-label="Close modal"
+                className="absolute top-2 right-2 md:top-4 md:right-4 z-10 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full"
               >
                 <X className="h-6 w-6" />
               </button>
-
-              {/* Navigation buttons */}
               <button
                 onClick={(e) => {
                   e.stopPropagation()
                   navigateImage("prev")
                 }}
-                className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
-                aria-label="Previous image"
+                className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full"
               >
                 <ChevronLeft className="h-6 w-6" />
               </button>
-
               <button
                 onClick={(e) => {
                   e.stopPropagation()
                   navigateImage("next")
                 }}
-                className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
-                aria-label="Next image"
+                className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full"
               >
                 <ChevronRight className="h-6 w-6" />
               </button>
 
-              {/* Image container */}
               <div className="relative w-full h-full flex items-center justify-center">
                 <Image
-                  src={images[selectedImage].src || "/placeholder.svg"}
+                  src={images[selectedImage].src}
                   alt={images[selectedImage].alt}
                   fill
                   className="object-contain"
@@ -215,10 +187,11 @@ export default function Gallery() {
                 />
               </div>
 
-              {/* Caption */}
               <div className="absolute bottom-4 left-0 right-0 text-center">
-                <p className="text-white bg-black/50 inline-block px-4 py-2 rounded-lg">{images[selectedImage].alt}</p>
-                <p className="text-white/70 text-sm mt-2">
+                <p className="text-white bg-black/50 inline-block px-4 py-2 rounded-lg text-xs sm:text-sm">
+                  {images[selectedImage].alt}
+                </p>
+                <p className="text-white/70 text-xs mt-2">
                   {selectedImage + 1} / {images.length}
                 </p>
               </div>

@@ -32,7 +32,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="w-full bg-gradient-to-br from-gray-900 to-gray-800 text-white py-12 relative overflow-hidden">
+    <footer className="w-full bg-gradient-to-br from-gray-900 to-gray-800 text-white py-12 relative overflow-hidden text-xs md:text-sm">
       {/* Background elements */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-purple-600" />
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
@@ -49,7 +49,6 @@ export default function Footer() {
         >
           <motion.div className="space-y-4" variants={item}>
             <div className="flex items-center">
-              {/* <div className="relative h-10 w-10 overflow-hidden rounded-full bg-gradient-to-br from-blue-500 to-purple-600"> */}
               <Image
                 src={logo}
                 alt="Logo"
@@ -57,10 +56,6 @@ export default function Footer() {
                 height={100}
                 className="object-cover"
               />
-              {/* </div> */}
-              {/* <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
-                ServiceMicrowave
-              </span> */}
             </div>
             <p className="text-gray-400">
               Layanan perbaikan microwave profesional dengan teknisi berpengalaman. Kami siap datang ke rumah Anda dalam
@@ -164,7 +159,7 @@ export default function Footer() {
                 <span>info@ServiceMicrowave.com</span>
               </li>
               <li className="flex items-start">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-900/30 mr-3 mt-1">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-900/30 mr-3">
                   <MapPin className="h-5 w-5 text-indigo-400" />
                 </div>
                 <span>Jl. Gunung Atena 1 no 11A, Denpasar Barat, Bali</span>

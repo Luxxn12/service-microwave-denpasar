@@ -63,13 +63,13 @@ export default function About() {
           transition={{ duration: 0.5 }}
         >
           <div className="space-y-2">
-            <div className="inline-block rounded-lg bg-blue-100 dark:bg-blue-900/30 px-3 py-1 text-sm text-blue-600 dark:text-blue-400 mb-2">
+            <div className="inline-block rounded-lg bg-blue-100 dark:bg-blue-900/30 px-3 py-1 text-xs sm:text-sm text-blue-600 dark:text-blue-400 mb-2">
               Tentang Kami
             </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+            <h2 className="text-xl sm:text-2xl md:text-4xl font-bold tracking-tight">
               Solusi Terbaik untuk Microwave Anda
             </h2>
-            <p className="max-w-[900px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            <p className="max-w-[900px] text-sm sm:text-base md:text-lg text-gray-500 dark:text-gray-400">
               Kami adalah tim teknisi profesional dengan pengalaman lebih dari 10 tahun dalam perbaikan microwave
               berbagai merek di seluruh Bali.
             </p>
@@ -102,7 +102,7 @@ export default function About() {
             animate={isInView ? "show" : "hidden"}
           >
             <motion.div variants={item}>
-              <h3 className="text-2xl font-bold">Mengapa Memilih Kami?</h3>
+              <h3 className="text-lg sm:text-xl font-bold">Mengapa Memilih Kami?</h3>
             </motion.div>
 
             <motion.ul className="space-y-6" variants={container}>
@@ -112,8 +112,8 @@ export default function About() {
                     {feature.icon}
                   </div>
                   <div>
-                    <h4 className="font-bold">{feature.title}</h4>
-                    <p className="text-gray-500 dark:text-gray-400">{feature.description}</p>
+                    <h4 className="font-semibold text-sm sm:text-base">{feature.title}</h4>
+                    <p className="text-sm sm:text-base text-gray-500 dark:text-gray-400">{feature.description}</p>
                   </div>
                 </motion.li>
               ))}
@@ -121,12 +121,12 @@ export default function About() {
 
             <motion.div className="flex flex-wrap gap-4 mt-6" variants={item}>
               <div className="flex items-center space-x-2 bg-purple-50 dark:bg-purple-900/20 p-3 rounded-lg">
-                <Shield className="h-8 w-8 text-purple-500" />
-                <span className="text-lg font-medium">Terpercaya</span>
+                <Shield className="h-6 w-6 sm:h-8 sm:w-8 text-purple-500" />
+                <span className="text-sm sm:text-base font-medium">Terpercaya</span>
               </div>
               <div className="flex items-center space-x-2 bg-green-50 dark:bg-green-900/20 p-3 rounded-lg">
-                <Clock className="h-8 w-8 text-green-500" />
-                <span className="text-lg font-medium">Tepat Waktu</span>
+                <Clock className="h-6 w-6 sm:h-8 sm:w-8 text-green-500" />
+                <span className="text-sm sm:text-base font-medium">Tepat Waktu</span>
               </div>
             </motion.div>
           </motion.div>

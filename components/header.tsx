@@ -74,7 +74,7 @@ export default function Header() {
             >
               <Link
                 href={item.href}
-                className="px-3 py-2 text-sm font-medium rounded-md hover:bg-accent hover:text-accent-foreground transition-colors"
+                className="px-3 py-2 text-xs md:text-sm font-medium rounded-md hover:bg-accent hover:text-accent-foreground transition-colors"
               >
                 {item.name}
               </Link>
@@ -91,7 +91,7 @@ export default function Header() {
           >
             <Button
               asChild
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-xs md:text-sm text-white"
             >
               <Link href="#kontak" className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
@@ -138,7 +138,7 @@ export default function Header() {
                 >
                   <Link
                     href={item.href}
-                    className="py-3 text-lg font-medium hover:text-primary transition-colors"
+                    className="py-3 text-xs md:text-sm font-medium hover:text-primary transition-colors"
                     onClick={toggleMenu}
                   >
                     {item.name}
@@ -153,7 +153,7 @@ export default function Header() {
               >
                 <Button
                   asChild
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-xs md:text-sm text-white"
                 >
                   <Link
                     href="#kontak"

@@ -13,49 +13,49 @@ export default function Services() {
 
   const services = [
     {
-      icon: <Settings className="h-10 w-10 text-blue-500" />,
+      icon: <Settings className="h-8 w-8 text-blue-500 sm:h-10 sm:w-10" />,
       title: "Service Microwave Digital & Manual",
       description: "Perbaikan untuk semua jenis microwave digital maupun manual dari berbagai merek.",
       color: "from-blue-500 to-blue-600",
     },
     {
-      icon: <Zap className="h-10 w-10 text-purple-500" />,
+      icon: <Zap className="h-8 w-8 text-purple-500 sm:h-10 sm:w-10" />,
       title: "Ganti Magnetron",
       description: "Penggantian magnetron yang rusak dengan suku cadang asli dan berkualitas.",
       color: "from-purple-500 to-purple-600",
     },
     {
-      icon: <Tool className="h-10 w-10 text-indigo-500" />,
+      icon: <Tool className="h-8 w-8 text-indigo-500 sm:h-10 sm:w-10" />,
       title: "Ganti Fuse",
       description: "Penggantian sekring yang putus dengan cepat dan aman.",
       color: "from-indigo-500 to-indigo-600",
     },
     {
-      icon: <Cpu className="h-10 w-10 text-cyan-500" />,
+      icon: <Cpu className="h-8 w-8 text-cyan-500 sm:h-10 sm:w-10" />,
       title: "Perbaikan PCB",
       description: "Perbaikan papan sirkuit elektronik dengan teknologi terkini.",
       color: "from-cyan-500 to-cyan-600",
     },
     {
-      icon: <RefreshCw className="h-10 w-10 text-teal-500" />,
+      icon: <RefreshCw className="h-8 w-8 text-teal-500 sm:h-10 sm:w-10" />,
       title: "Ganti Kaca / Pintu Microwave",
       description: "Penggantian kaca atau pintu microwave yang rusak atau retak.",
       color: "from-teal-500 to-teal-600",
     },
     {
-      icon: <Shield className="h-10 w-10 text-green-500" />,
+      icon: <Shield className="h-8 w-8 text-green-500 sm:h-10 sm:w-10" />,
       title: "Pembersihan & Maintenance",
       description: "Pembersihan menyeluruh dan perawatan rutin untuk memperpanjang umur microwave.",
       color: "from-green-500 to-green-600",
     },
     {
-      icon: <Wrench className="h-10 w-10 text-amber-500" />,
+      icon: <Wrench className="h-8 w-8 text-amber-500 sm:h-10 sm:w-10" />,
       title: "Perbaikan Listrik Tidak Menyala",
       description: "Mengatasi masalah microwave yang tidak menyala atau tidak berfungsi.",
       color: "from-amber-500 to-amber-600",
     },
     {
-      icon: <MessageSquare className="h-10 w-10 text-rose-500" />,
+      icon: <MessageSquare className="h-8 w-8 text-rose-500 sm:h-10 sm:w-10" />,
       title: "Konsultasi Gratis",
       description: "Konsultasi gratis untuk masalah microwave Anda sebelum melakukan perbaikan.",
       color: "from-rose-500 to-rose-600",
@@ -97,8 +97,8 @@ export default function Services() {
             <div className="inline-block rounded-lg bg-blue-100 dark:bg-blue-900/30 px-3 py-1 text-sm text-blue-600 dark:text-blue-400 mb-2">
               Layanan Kami
             </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Jenis Layanan</h2>
-            <p className="max-w-[900px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter">Jenis Layanan</h2>
+            <p className="max-w-[900px] text-sm sm:text-base md:text-lg text-gray-500 dark:text-gray-400">
               Kami menyediakan berbagai layanan perbaikan microwave untuk mengatasi semua jenis kerusakan.
             </p>
           </div>
@@ -116,10 +116,10 @@ export default function Services() {
                 <div className={`h-2 w-full bg-gradient-to-r ${service.color}`} />
                 <CardHeader className="flex flex-row items-center gap-4 pb-2">
                   <div className="rounded-full p-2 bg-gray-100 dark:bg-gray-700">{service.icon}</div>
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
+                  <CardTitle className="text-base sm:text-lg md:text-xl">{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-base">{service.description}</CardDescription>
+                  <CardDescription className="text-sm sm:text-base md:text-lg">{service.description}</CardDescription>
                 </CardContent>
               </Card>
             </motion.div>

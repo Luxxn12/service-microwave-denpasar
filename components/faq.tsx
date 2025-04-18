@@ -4,7 +4,12 @@ import { useRef } from "react"
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 export default function Faq() {
   const ref = useRef(null)
@@ -59,8 +64,11 @@ export default function Faq() {
   }
 
   return (
-    <section id="faq" className="w-full py-12 md:py-24 lg:py-32 relative overflow-hidden">
-      {/* Background elements */}
+    <section
+      id="faq"
+      className="w-full py-12 md:py-24 lg:py-32 relative overflow-hidden"
+    >
+      {/* Background */}
       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-blue-100/50 dark:bg-blue-900/20 rounded-full blur-3xl opacity-70 -z-10" />
       <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-purple-100/50 dark:bg-purple-900/20 rounded-full blur-3xl opacity-70 -z-10" />
 
@@ -75,8 +83,10 @@ export default function Faq() {
             <div className="inline-block rounded-lg bg-blue-100 dark:bg-blue-900/30 px-3 py-1 text-sm text-blue-600 dark:text-blue-400 mb-2">
               FAQ
             </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Pertanyaan Umum</h2>
-            <p className="max-w-[900px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter">
+              Pertanyaan Umum
+            </h2>
+            <p className="max-w-[900px] text-gray-500 dark:text-gray-400 text-sm sm:text-base md:text-lg">
               Temukan jawaban untuk pertanyaan yang sering diajukan tentang layanan kami.
             </p>
           </div>
@@ -91,11 +101,16 @@ export default function Faq() {
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, index) => (
               <motion.div key={index} variants={item}>
-                <AccordionItem value={`item-${index}`} className="border-b border-gray-200 dark:border-gray-700">
-                  <AccordionTrigger className="text-left font-medium py-4 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                <AccordionItem
+                  value={`item-${index}`}
+                  className="border-b border-gray-200 dark:border-gray-700"
+                >
+                  <AccordionTrigger className="text-left text-sm sm:text-base font-medium py-4 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-gray-600 dark:text-gray-300">{faq.answer}</AccordionContent>
+                  <AccordionContent className="text-gray-600 dark:text-gray-300 text-xs sm:text-base">
+                    {faq.answer}
+                  </AccordionContent>
                 </AccordionItem>
               </motion.div>
             ))}
