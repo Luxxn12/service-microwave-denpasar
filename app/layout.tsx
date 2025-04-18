@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: "Service Microwave Denpasar",
     images: [
       {
-        url: "https://www.servicemicrowavedenpasar.com",
+        url: "https://www.servicemicrowavedenpasar.com/logo.png",
         width: 800,
         height: 600,
         alt: "Service Microwave Denpasar",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Service Microwave Denpasar",
     description: "Service Microwave Panggilan Cepat dan Bergaransi di Bali",
-    images: ["https://www.servicemicrowavedenpasar.com"],
+    images: ["https://www.servicemicrowavedenpasar.com/logo.png"],
   },
   icons: {
     icon: "/logo.png",
