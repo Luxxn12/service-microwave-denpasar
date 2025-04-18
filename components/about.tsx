@@ -120,10 +120,6 @@ export default function About() {
             </motion.ul>
 
             <motion.div className="flex flex-wrap gap-4 mt-6" variants={item}>
-              <div className="flex items-center space-x-2 bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg">
-                <Award className="h-8 w-8 text-blue-500" />
-                <span className="text-lg font-medium">Bersertifikat</span>
-              </div>
               <div className="flex items-center space-x-2 bg-purple-50 dark:bg-purple-900/20 p-3 rounded-lg">
                 <Shield className="h-8 w-8 text-purple-500" />
                 <span className="text-lg font-medium">Terpercaya</span>
