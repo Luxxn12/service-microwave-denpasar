@@ -24,7 +24,7 @@ export default function Faq() {
     {
       question: "Apakah ada garansi untuk perbaikan microwave?",
       answer:
-        "Ya, kami memberikan garansi untuk setiap perbaikan yang kami lakukan. Garansi berkisar antara 1-3 bulan tergantung pada jenis perbaikan. Garansi mencakup kerusakan yang sama dan tidak berlaku jika terjadi kerusakan akibat kesalahan penggunaan atau bencana alam.",
+        "Ya, kami memberikan garansi untuk setiap perbaikan yang kami lakukan. Lamanya garansi tergantung pada jenis perbaikan dan kesepakatan di Awal. Garansi mencakup kerusakan yang sama dan tidak berlaku jika terjadi kerusakan akibat kesalahan penggunaan atau bencana alam.",
     },
     {
       question: "Apakah bisa panggilan ke rumah?",

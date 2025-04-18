@@ -41,7 +41,7 @@ export default function Pricing() {
       description: "Untuk kerusakan yang memerlukan penggantian komponen kecil hingga menengah.",
       features: [
         "Perbaikan dalam 2-3 jam",
-        "Garansi 2 bulan",
+        "Garansi 1 bulan",
         "Termasuk biaya pengecekan",
         "Pembersihan unit",
         "Penggantian komponen",
@@ -55,7 +55,7 @@ export default function Pricing() {
       description: "Untuk kerusakan yang memerlukan penggantian komponen utama seperti magnetron.",
       features: [
         "Perbaikan dalam 3-5 jam",
-        "Garansi 3 bulan",
+        "Garansi 1 bulan",
         "Termasuk biaya pengecekan",
         "Pembersihan unit",
         "Penggantian komponen utama",

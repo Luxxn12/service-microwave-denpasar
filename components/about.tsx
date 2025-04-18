@@ -20,7 +20,7 @@ export default function About() {
     {
       icon: <CheckCircle className="h-6 w-6 text-green-500 flex-shrink-0" />,
       title: "Garansi Perbaikan",
-      description: "Kami memberikan garansi hingga 3 bulan untuk setiap perbaikan yang kami lakukan.",
+      description: "Kami memberikan garansi untuk setiap perbaikan yang kami lakukan.",
     },
     {
       icon: <CheckCircle className="h-6 w-6 text-green-500 flex-shrink-0" />,

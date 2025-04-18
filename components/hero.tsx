@@ -143,11 +143,11 @@ export default function Hero() {
               >
                 <div className="flex items-center gap-2">
                   <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
-                    <span className="text-green-600 text-xs font-bold">3m</span>
+                    <span className="text-green-600 text-xs font-bold">1m</span>
                   </div>
                   <div>
                     <p className="text-xs font-medium">Garansi</p>
-                    <p className="text-[10px] text-gray-500">Hingga 3 bulan</p>
+                    <p className="text-[10px] text-gray-500">Hingga 1 bulan</p>
                   </div>
                 </div>
               </motion.div>
