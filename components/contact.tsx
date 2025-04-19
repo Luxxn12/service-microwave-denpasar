@@ -1,23 +1,18 @@
-"use client";
+"use client"
 
-import type React from "react";
-import { useRef, useState } from "react";
-import { Phone, Mail, MapPin, Send, CheckCircle } from "lucide-react";
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import type React from "react"
+import { useRef } from "react"
+import { useState } from "react"
+import { Phone, Mail, MapPin, Send, CheckCircle, AlertCircle } from "lucide-react"
+import { motion } from "framer-motion"
+import { useInView } from "framer-motion"
 
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { toast } from "sonner";
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Textarea } from "@/components/ui/textarea"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { toast } from "sonner"
 
 export default function Contact() {
   const ref = useRef(null);
@@ -101,12 +96,12 @@ export default function Contact() {
       setLoading(false);
     }
   };
-
   return (
     <section
       id="kontak"
       className="w-full py-12 md:py-24 lg:py-32 bg-gray-50/50 dark:bg-gray-900/20 relative overflow-hidden"
     >
+      {/* Background elements */}
       <div className="absolute top-0 left-0 w-1/3 h-1/3 bg-blue-100/50 dark:bg-blue-900/20 rounded-full blur-3xl opacity-70 -z-10" />
       <div className="absolute bottom-0 right-0 w-1/3 h-1/3 bg-purple-100/50 dark:bg-purple-900/20 rounded-full blur-3xl opacity-70 -z-10" />
 
@@ -121,12 +116,9 @@ export default function Contact() {
             <div className="inline-block rounded-lg bg-blue-100 dark:bg-blue-900/30 px-3 py-1 text-sm text-blue-600 dark:text-blue-400 mb-2">
               Hubungi Kami
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight">
-              Hubungi Kami
-            </h2>
-            <p className="max-w-[900px] text-sm sm:text-base md:text-xl text-gray-500 dark:text-gray-400">
-              Butuh bantuan perbaikan microwave? Hubungi kami sekarang untuk
-              layanan cepat dan profesional.
+            <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl">Hubungi Kami</h2>
+            <p className="max-w-[900px] text-gray-500 dark:text-gray-400 text-sm md:text-base/relaxed lg:text-sm/relaxed xl:text-base/relaxed">
+              Butuh bantuan perbaikan microwave? Hubungi kami sekarang untuk layanan cepat dan profesional.
             </p>
           </div>
         </motion.div>
@@ -138,14 +130,11 @@ export default function Contact() {
             initial="hidden"
             animate={isInView ? "show" : "hidden"}
           >
-            {/* Informasi Kontak */}
             <motion.div variants={item}>
               <Card className="border-0 shadow-lg bg-white dark:bg-gray-800">
                 <CardHeader>
                   <CardTitle>Informasi Kontak</CardTitle>
-                  <CardDescription>
-                    Hubungi kami melalui salah satu kontak di bawah ini
-                  </CardDescription>
+                  <CardDescription>Hubungi kami melalui salah satu kontak di bawah ini</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div className="flex items-center space-x-4">
@@ -153,12 +142,8 @@ export default function Contact() {
                       <Phone className="h-6 w-6 text-blue-600 dark:text-blue-400" />
                     </div>
                     <div>
-                      <p className="font-medium text-sm sm:text-base">
-                        Telepon / WhatsApp
-                      </p>
-                      <p className="text-gray-500 dark:text-gray-400 text-sm">
-                        085737655537
-                      </p>
+                      <p className="font-medium text-sm">Telepon / WhatsApp</p>
+                      <p className="text-gray-500 dark:text-gray-400 text-xs">0812-3456-7890</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-4">
@@ -166,10 +151,8 @@ export default function Contact() {
                       <Mail className="h-6 w-6 text-purple-600 dark:text-purple-400" />
                     </div>
                     <div>
-                      <p className="font-medium text-sm sm:text-base">Email</p>
-                      <p className="text-gray-500 dark:text-gray-400 text-sm">
-                        servicemicrowavedenpasar@gmail.com
-                      </p>
+                      <p className="font-medium text-sm">Email</p>
+                      <p className="text-gray-500 dark:text-gray-400 text-xs">info@mikroservis.com</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-4">
@@ -177,8 +160,8 @@ export default function Contact() {
                       <MapPin className="h-6 w-6 text-indigo-600 dark:text-indigo-400" />
                     </div>
                     <div>
-                      <p className="font-medium text-sm sm:text-base">Alamat</p>
-                      <p className="text-gray-500 dark:text-gray-400 text-sm">
+                      <p className="font-medium text-sm">Alamat</p>
+                      <p className="text-gray-500 dark:text-gray-400 text-xs">
                         Jl. Gunung Atena 1 No 11A, Denpasar Barat, Bali
                       </p>
                     </div>
@@ -187,31 +170,31 @@ export default function Contact() {
               </Card>
             </motion.div>
 
-            {/* Jam Operasional */}
             <motion.div variants={item}>
               <Card className="border-0 shadow-lg bg-white dark:bg-gray-800">
                 <CardHeader>
                   <CardTitle>Jam Operasional</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4 text-sm sm:text-base">
-                  <div className="flex justify-between items-center pb-2 border-b border-gray-100 dark:border-gray-700">
-                    <span>Senin - Jumat</span>
-                    <span className="font-medium">08:00 - 20:00</span>
-                  </div>
-                  <div className="flex justify-between items-center pb-2 border-b border-gray-100 dark:border-gray-700">
-                    <span>Sabtu</span>
-                    <span className="font-medium">09:00 - 18:00</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span>Minggu</span>
-                    <span className="font-medium">09:00 - 15:00</span>
+                <CardContent>
+                  <div className="space-y-4">
+                    <div className="flex justify-between items-center pb-2 border-b border-gray-100 dark:border-gray-700">
+                      <span>Senin - Jumat</span>
+                      <span className="font-medium">08:00 - 20:00</span>
+                    </div>
+                    <div className="flex justify-between items-center pb-2 border-b border-gray-100 dark:border-gray-700">
+                      <span>Sabtu</span>
+                      <span className="font-medium">09:00 - 18:00</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span>Minggu</span>
+                      <span className="font-medium">09:00 - 15:00</span>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
             </motion.div>
           </motion.div>
 
-          {/* Formulir */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
@@ -220,10 +203,7 @@ export default function Contact() {
             <Card className="border-0 shadow-lg bg-white dark:bg-gray-800 h-full">
               <CardHeader>
                 <CardTitle>Formulir Pemesanan</CardTitle>
-                <CardDescription>
-                  Isi formulir di bawah ini untuk memesan layanan perbaikan
-                  microwave
-                </CardDescription>
+                <CardDescription>Isi formulir di bawah ini untuk memesan layanan perbaikan microwave</CardDescription>
               </CardHeader>
               <CardContent>
                 {isSubmitted ? (
@@ -236,20 +216,15 @@ export default function Contact() {
                     <div className="w-16 h-16 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mb-4">
                       <CheckCircle className="h-8 w-8 text-green-600 dark:text-green-400" />
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold mb-2">
-                      Pesan Terkirim!
-                    </h3>
-                    <p className="text-gray-500 dark:text-gray-400 text-sm sm:text-base">
-                      Terima kasih telah menghubungi kami. Tim kami akan segera
-                      menghubungi Anda.
+                    <h3 className="text-xl font-bold mb-2">Pesan Terkirim!</h3>
+                    <p className="text-gray-500 dark:text-gray-400">
+                      Terima kasih telah menghubungi kami. Tim kami akan segera menghubungi Anda.
                     </p>
                   </motion.div>
                 ) : (
                   <form onSubmit={onSubmit} className="space-y-4">
                     <div className="space-y-2">
-                      <Label htmlFor="name">Nama Lengkap
-                        <span className="text-red-500">*</span>
-                      </Label>
+                      <Label htmlFor="name">Nama Lengkap <span className="text-red-500">*</span></Label>
                       <Input
                         id="name"
                         name="from_name"
@@ -261,9 +236,7 @@ export default function Contact() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="email">Email
-                        <span className="text-red-500">*</span>
-                      </Label>
+                      <Label htmlFor="email">Email <span className="text-red-500">*</span></Label>
                       <Input
                         id="email"
                         name="email"
@@ -276,9 +249,7 @@ export default function Contact() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="message">Deskripsi Kerusakan
-                        <span className="text-red-500">*</span>
-                      </Label>
+                      <Label htmlFor="message">Deskripsi Kerusakan <span className="text-red-500">*</span></Label>
                       <Textarea
                         id="message"
                         name="message"
@@ -291,14 +262,17 @@ export default function Contact() {
                     </div>
                     <Button
                       type="submit"
-                      disabled={loading}
                       className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+                      disabled={loading}
                     >
                       {loading ? (
-                        "Mengirim..."
+                        <div className="flex items-center">
+                          <div className="h-4 w-4 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
+                          Mengirim...
+                        </div>
                       ) : (
                         <>
-                          <Send className="w-4 h-4 mr-2" />
+                          <Send className="mr-2 h-4 w-4" />
                           Kirim Pesan
                         </>
                       )}
@@ -311,5 +285,5 @@ export default function Contact() {
         </div>
       </div>
     </section>
-  );
+  )
 }
