@@ -143,7 +143,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="font-medium text-sm">Telepon / WhatsApp</p>
-                      <p className="text-gray-500 dark:text-gray-400 text-xs">0812-3456-7890</p>
+                      <p className="text-gray-500 dark:text-gray-400 text-xs">085737655537</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-4">
@@ -152,7 +152,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="font-medium text-sm">Email</p>
-                      <p className="text-gray-500 dark:text-gray-400 text-xs">info@mikroservis.com</p>
+                      <p className="text-gray-500 dark:text-gray-400 text-xs">servicemicrowavedenpasar@gmail.com</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-4">
