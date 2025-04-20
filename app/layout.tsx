@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     images: ["https://www.servicemicrowavedenpasar.com/logo.png"],
   },
   icons: {
-    icon: "/logo.png",
+    icon: "https://www.servicemicrowavedenpasar.com/logo.png",
   },
   authors: [
     {
@@ -64,6 +64,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" suppressHydrationWarning>
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              url: "https://www.servicemicrowavedenpasar.com",
+              logo: "https://www.servicemicrowavedenpasar.com/logo.png",
+              name: "Service Microwave Denpasar",
+              description:
+                "Jasa service microwave terpercaya di Denpasar Bali. Teknisi handal dan bergaransi.",
+            }),
+          }} 
+        />
+      </Head>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           {children}
@@ -74,3 +90,4 @@ export default function RootLayout({
 }
 
 import "./globals.css";
+import Head from "next/head";
