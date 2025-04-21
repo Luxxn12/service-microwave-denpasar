@@ -7,7 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Service Microwave Denpasar",
+  title: "Service Microwave Denpasar - Panggilan Cepat & Bergaransi",
   description:
     "Jasa service microwave terpercaya di Denpasar Bali. Teknisi handal, bergaransi, dan bisa panggilan ke rumah.",
   keywords: [
@@ -19,22 +19,23 @@ export const metadata: Metadata = {
     "service microwave terpercaya",
     "service microwave bergaransi",
     "jasa service microwave bali",
+    "jasa service microwave denpasar",
   ],
   robots: "index, follow",
   alternates: {
     canonical: "https://www.servicemicrowavedenpasar.com/",
   },
   openGraph: {
-    title: "Service Microwave Denpasar - Cepat & Bergaransi",
+    title: "Service Microwave Denpasar - Panggilan Cepat & Bergaransi",
     description: "Layanan perbaikan microwave profesional di Denpasar Bali",
     url: "https://www.servicemicrowavedenpasar.com",
-    siteName: "Service Microwave Denpasar",
+    siteName: "Service Microwave Denpasar - Panggilan Cepat & Bergaransi",
     images: [
       {
         url: "https://www.servicemicrowavedenpasar.com/logo.png",
         width: 800,
         height: 600,
-        alt: "Service Microwave Denpasar",
+        alt: "Service Microwave Denpasar - Panggilan Cepat & Bergaransi",
       },
     ],
     type: "website",
@@ -42,7 +43,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Service Microwave Denpasar",
+    title: "Service Microwave Denpasar - Panggilan Cepat & Bergaransi",
     description: "Service Microwave Panggilan Cepat dan Bergaransi di Bali",
     images: ["https://www.servicemicrowavedenpasar.com/logo.png"],
   },
@@ -73,7 +74,7 @@ export default function RootLayout({
               "@type": "Organization",
               url: "https://www.servicemicrowavedenpasar.com",
               logo: "https://www.servicemicrowavedenpasar.com/logo.png",
-              name: "Service Microwave Denpasar",
+              name: "Service Microwave Denpasar - Panggilan Cepat & Bergaransi",
               description:
                 "Jasa service microwave terpercaya di Denpasar Bali. Teknisi handal dan bergaransi.",
             }),
