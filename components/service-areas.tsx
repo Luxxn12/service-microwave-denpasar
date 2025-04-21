@@ -60,10 +60,10 @@ export default function ServiceAreas() {
           transition={{ duration: 0.5 }}
         >
           <div className="space-y-2">
-            <div className="inline-block rounded-lg bg-blue-100 dark:bg-blue-900/30 px-3 py-1 text-xs sm:text-sm md:text-base lg:text-lg text-blue-600 dark:text-blue-400 mb-2">
+            <div className="inline-block rounded-lg bg-blue-100 dark:bg-blue-900/30 px-3 py-1 text-sm text-blue-600 dark:text-blue-400 mb-2">
               Jangkauan Kami
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter">
               Area Layanan
             </h2>
             <p className="max-w-[900px] text-sm md:text-lg lg:text-xl text-gray-500 dark:text-gray-400">
