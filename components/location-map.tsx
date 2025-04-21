@@ -43,7 +43,7 @@ export default function LocationMap() {
   }, [resolvedTheme])
 
   const openGoogleMaps = () => {
-    window.open(GOOGLE_MAPS_URL, "_blank")
+    window.open(GOOGLE_MAPS_URL)
   }
 
   if (!isMounted) {
