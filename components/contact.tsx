@@ -1,19 +1,32 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { useRef } from "react"
-import { useState } from "react"
-import { Phone, Mail, MapPin, Send, CheckCircle, AlertCircle } from "lucide-react"
-import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
+import type React from "react";
+import { useRef } from "react";
+import { useState } from "react";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Send,
+  CheckCircle,
+  AlertCircle,
+} from "lucide-react";
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
 
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { toast } from "sonner"
-
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { toast } from "sonner";
+import dynamic from "next/dynamic";
 export default function Contact() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
@@ -96,6 +109,16 @@ export default function Contact() {
       setLoading(false);
     }
   };
+
+  const LocationMap = dynamic(() => import("@/components/location-map"), {
+    ssr: false,
+    loading: () => (
+      <div className="w-full h-[300px] bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-center">
+        <p className="text-gray-500 dark:text-gray-400">Loading map...</p>
+      </div>
+    ),
+  });
+
   return (
     <section
       id="kontak"
@@ -116,9 +139,12 @@ export default function Contact() {
             <div className="inline-block rounded-lg bg-blue-100 dark:bg-blue-900/30 px-3 py-1 text-sm text-blue-600 dark:text-blue-400 mb-2">
               Hubungi Kami
             </div>
-            <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl">Hubungi Kami</h2>
+            <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl">
+              Hubungi Kami
+            </h2>
             <p className="max-w-[900px] text-gray-500 dark:text-gray-400 text-sm md:text-base/relaxed lg:text-sm/relaxed xl:text-base/relaxed">
-              Butuh bantuan perbaikan microwave? Hubungi kami sekarang untuk layanan cepat dan profesional.
+              Butuh bantuan perbaikan microwave? Hubungi kami sekarang untuk
+              layanan cepat dan profesional.
             </p>
           </div>
         </motion.div>
@@ -134,7 +160,9 @@ export default function Contact() {
               <Card className="border-0 shadow-lg bg-white dark:bg-gray-800">
                 <CardHeader>
                   <CardTitle>Informasi Kontak</CardTitle>
-                  <CardDescription>Hubungi kami melalui salah satu kontak di bawah ini</CardDescription>
+                  <CardDescription>
+                    Hubungi kami melalui salah satu kontak di bawah ini
+                  </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div className="flex items-center space-x-4">
@@ -143,7 +171,9 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="font-medium text-sm">Telepon / WhatsApp</p>
-                      <p className="text-gray-500 dark:text-gray-400 text-xs">085737655537</p>
+                      <p className="text-gray-500 dark:text-gray-400 text-xs">
+                        085737655537
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-4">
@@ -152,7 +182,9 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="font-medium text-sm">Email</p>
-                      <p className="text-gray-500 dark:text-gray-400 text-xs">servicemicrowavedenpasar@gmail.com</p>
+                      <p className="text-gray-500 dark:text-gray-400 text-xs">
+                        servicemicrowavedenpasar@gmail.com
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-4">
@@ -162,7 +194,8 @@ export default function Contact() {
                     <div>
                       <p className="font-medium text-sm">Alamat</p>
                       <p className="text-gray-500 dark:text-gray-400 text-xs">
-                        Jl. Gunung Atena 1 No 11A, Denpasar Barat, Bali
+                        Jl. Gn. Atena I No.11a, Padangsambian Klod, Kota
+                        Denpasar, Bali 80361
                       </p>
                     </div>
                   </div>
@@ -203,7 +236,10 @@ export default function Contact() {
             <Card className="border-0 shadow-lg bg-white dark:bg-gray-800 h-full">
               <CardHeader>
                 <CardTitle>Formulir Pemesanan</CardTitle>
-                <CardDescription>Isi formulir di bawah ini untuk memesan layanan perbaikan microwave</CardDescription>
+                <CardDescription>
+                  Isi formulir di bawah ini untuk memesan layanan perbaikan
+                  microwave
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 {isSubmitted ? (
@@ -218,13 +254,16 @@ export default function Contact() {
                     </div>
                     <h3 className="text-xl font-bold mb-2">Pesan Terkirim!</h3>
                     <p className="text-gray-500 dark:text-gray-400">
-                      Terima kasih telah menghubungi kami. Tim kami akan segera menghubungi Anda.
+                      Terima kasih telah menghubungi kami. Tim kami akan segera
+                      menghubungi Anda.
                     </p>
                   </motion.div>
                 ) : (
                   <form onSubmit={onSubmit} className="space-y-4">
                     <div className="space-y-2">
-                      <Label htmlFor="name">Nama Lengkap <span className="text-red-500">*</span></Label>
+                      <Label htmlFor="name">
+                        Nama Lengkap <span className="text-red-500">*</span>
+                      </Label>
                       <Input
                         id="name"
                         name="from_name"
@@ -236,7 +275,9 @@ export default function Contact() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="email">Email <span className="text-red-500">*</span></Label>
+                      <Label htmlFor="email">
+                        Email <span className="text-red-500">*</span>
+                      </Label>
                       <Input
                         id="email"
                         name="email"
@@ -249,7 +290,10 @@ export default function Contact() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="message">Deskripsi Kerusakan <span className="text-red-500">*</span></Label>
+                      <Label htmlFor="message">
+                        Deskripsi Kerusakan{" "}
+                        <span className="text-red-500">*</span>
+                      </Label>
                       <Textarea
                         id="message"
                         name="message"
@@ -283,7 +327,20 @@ export default function Contact() {
             </Card>
           </motion.div>
         </div>
+        <motion.div variants={item}>
+          <Card className="border-0 shadow-lg bg-white dark:bg-gray-800">
+            <CardHeader>
+              <CardTitle>Lokasi Kami</CardTitle>
+              <CardDescription>
+                Klik pada peta untuk membuka di Google Maps
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <LocationMap />
+            </CardContent>
+          </Card>
+        </motion.div>
       </div>
     </section>
-  )
+  );
 }

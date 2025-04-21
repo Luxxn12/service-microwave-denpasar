@@ -162,7 +162,7 @@ export default function Footer() {
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-900/30 mr-3">
                   <MapPin className="h-5 w-5 text-indigo-400" />
                 </div>
-                <span>Jl. Gunung Atena 1 no 11A, Denpasar Barat, Bali</span>
+                <span>Jl. Gn. Atena I No.11a, Padangsambian Klod, Kota Denpasar, Bali 80361</span>
               </li>
             </ul>
           </motion.div>
