@@ -35,7 +35,7 @@ export const metadata: Metadata = {
         url: "https://www.servicemicrowavedenpasar.com/logo.png",
         width: 800,
         height: 600,
-        alt: "Service Microwave Denpasar - Panggilan Cepat & Bergaransi",
+        alt: "Service Microwave Denpasar",
       },
     ],
     type: "website",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Service Microwave Denpasar - Panggilan Cepat & Bergaransi",
+    title: "Service Microwave Denpasar",
     description: "Service Microwave Panggilan Cepat dan Bergaransi di Bali",
     images: ["https://www.servicemicrowavedenpasar.com/logo.png"],
   },
@@ -74,7 +74,7 @@ export default function RootLayout({
               "@type": "Organization",
               url: "https://www.servicemicrowavedenpasar.com",
               logo: "https://www.servicemicrowavedenpasar.com/logo.png",
-              name: "Service Microwave Denpasar - Panggilan Cepat & Bergaransi",
+              name: "Service Microwave Denpasar",
               description:
                 "Jasa service microwave terpercaya di Denpasar Bali. Teknisi handal dan bergaransi.",
             }),
