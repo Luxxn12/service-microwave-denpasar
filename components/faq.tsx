@@ -27,16 +27,6 @@ export default function Faq() {
         "Ya, kami memberikan garansi untuk setiap perbaikan yang kami lakukan. Lamanya garansi tergantung pada jenis perbaikan dan kesepakatan di Awal. Garansi mencakup kerusakan yang sama dan tidak berlaku jika terjadi kerusakan akibat kesalahan penggunaan atau bencana alam.",
     },
     {
-      question: "Apakah bisa panggilan ke rumah?",
-      answer:
-        "Ya, kami menyediakan layanan panggilan ke rumah untuk seluruh wilayah Bali. Teknisi kami akan datang ke lokasi Anda sesuai dengan jadwal yang telah disepakati. Untuk pemesanan, Anda dapat menghubungi kami melalui telepon, WhatsApp, atau mengisi formulir di website kami.",
-    },
-    {
-      question: "Berapa biaya panggilan teknisi ke rumah?",
-      answer:
-        "Biaya panggilan teknisi ke rumah adalah Rp 50.000 untuk wilayah Denpasar dan sekitarnya. Biaya ini akan dimasukkan ke dalam total biaya perbaikan jika Anda melanjutkan perbaikan. Untuk wilayah lain di Bali, mungkin ada biaya tambahan tergantung pada jarak.",
-    },
-    {
       question: "Apakah suku cadang yang digunakan original?",
       answer:
         "Ya, kami menggunakan suku cadang original atau berkualitas setara untuk memastikan kualitas perbaikan dan keamanan microwave Anda. Kami juga memberikan garansi untuk setiap suku cadang yang kami ganti.",

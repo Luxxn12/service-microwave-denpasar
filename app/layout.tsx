@@ -7,7 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Service Microwave Denpasar - Panggilan Cepat & Bergaransi",
+  title: "Service Microwave Denpasar - Cepat & Terpercaya",
   description:
     "Jasa service microwave terpercaya di Denpasar Bali. Teknisi handal, bergaransi, dan bisa panggilan ke rumah.",
   keywords: [
@@ -26,10 +26,10 @@ export const metadata: Metadata = {
     canonical: "https://www.servicemicrowavedenpasar.com/",
   },
   openGraph: {
-    title: "Service Microwave Denpasar - Panggilan Cepat & Bergaransi",
+    title: "Service Microwave Denpasar - Cepat & TerPercaya",
     description: "Layanan perbaikan microwave profesional di Denpasar Bali",
     url: "https://www.servicemicrowavedenpasar.com",
-    siteName: "Service Microwave Denpasar - Panggilan Cepat & Bergaransi",
+    siteName: "Service Microwave Denpasar - Cepat & TerPercaya",
     images: [
       {
         url: "https://www.servicemicrowavedenpasar.com/logo.png",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Service Microwave Denpasar",
-    description: "Service Microwave Panggilan Cepat dan Bergaransi di Bali",
+    description: "Service Microwave Cepat dan Bergaransi di Bali",
     images: ["https://www.servicemicrowavedenpasar.com/logo.png"],
   },
   icons: {
