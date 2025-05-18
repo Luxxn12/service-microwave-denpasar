@@ -327,6 +327,7 @@ export default function Contact() {
             </Card>
           </motion.div>
         </div>
+        <div className="mt-7">
         <motion.div variants={item}>
           <Card className="border-0 shadow-lg bg-white dark:bg-gray-800">
             <CardHeader>
@@ -340,6 +341,7 @@ export default function Contact() {
             </CardContent>
           </Card>
         </motion.div>
+        </div>
       </div>
     </section>
   );
