@@ -1,20 +1,28 @@
-"use client"
+"use client";
 
-import { useRef } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin, ArrowUp } from "lucide-react"
-import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
-import logo from "../public/logo.png"
+import { motion, useInView } from "framer-motion";
+import {
+  ArrowUp,
+  Facebook,
+  Instagram,
+  Mail,
+  MapPin,
+  Phone,
+  Twitter,
+  Youtube,
+} from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { useRef } from "react";
+import logo from "../public/logo.png";
 
 export default function Footer() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.1 })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const container = {
     hidden: { opacity: 0 },
@@ -24,12 +32,12 @@ export default function Footer() {
         staggerChildren: 0.1,
       },
     },
-  }
+  };
 
   const item = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  }
+  };
 
   return (
     <footer className="w-full bg-gradient-to-br from-gray-900 to-gray-800 text-white py-12 relative overflow-hidden text-xs md:text-sm">
@@ -58,23 +66,35 @@ export default function Footer() {
               />
             </div>
             <p className="text-gray-400">
-              Layanan perbaikan microwave profesional dengan teknisi berpengalaman. Kami siap datang ke rumah Anda dalam
-              waktu 1 jam!
+              Layanan perbaikan microwave profesional dengan teknisi
+              berpengalaman. Kami siap datang ke rumah Anda dalam waktu 1 jam!
             </p>
             <div className="flex space-x-4">
-              <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+              <Link
+                href="#"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
                 <Facebook className="h-5 w-5" />
                 <span className="sr-only">Facebook</span>
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+              <Link
+                href="#"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
                 <Instagram className="h-5 w-5" />
                 <span className="sr-only">Instagram</span>
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+              <Link
+                href="#"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
                 <Twitter className="h-5 w-5" />
                 <span className="sr-only">Twitter</span>
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+              <Link
+                href="#"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
                 <Youtube className="h-5 w-5" />
                 <span className="sr-only">YouTube</span>
               </Link>
@@ -85,27 +105,42 @@ export default function Footer() {
             <h3 className="text-lg font-bold">Layanan Kami</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="#layanan" className="text-gray-400 hover:text-white transition-colors inline-block">
+                <Link
+                  href="#layanan"
+                  className="text-gray-400 hover:text-white transition-colors inline-block"
+                >
                   Service Microwave Digital & Manual
                 </Link>
               </li>
               <li>
-                <Link href="#layanan" className="text-gray-400 hover:text-white transition-colors inline-block">
+                <Link
+                  href="#layanan"
+                  className="text-gray-400 hover:text-white transition-colors inline-block"
+                >
                   Ganti Magnetron
                 </Link>
               </li>
               <li>
-                <Link href="#layanan" className="text-gray-400 hover:text-white transition-colors inline-block">
+                <Link
+                  href="#layanan"
+                  className="text-gray-400 hover:text-white transition-colors inline-block"
+                >
                   Perbaikan PCB
                 </Link>
               </li>
               <li>
-                <Link href="#layanan" className="text-gray-400 hover:text-white transition-colors inline-block">
+                <Link
+                  href="#layanan"
+                  className="text-gray-400 hover:text-white transition-colors inline-block"
+                >
                   Ganti Kaca / Pintu Microwave
                 </Link>
               </li>
               <li>
-                <Link href="#layanan" className="text-gray-400 hover:text-white transition-colors inline-block">
+                <Link
+                  href="#layanan"
+                  className="text-gray-400 hover:text-white transition-colors inline-block"
+                >
                   Pembersihan & Maintenance
                 </Link>
               </li>
@@ -116,27 +151,42 @@ export default function Footer() {
             <h3 className="text-lg font-bold">Tautan Cepat</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="#beranda" className="text-gray-400 hover:text-white transition-colors inline-block">
+                <Link
+                  href="#beranda"
+                  className="text-gray-400 hover:text-white transition-colors inline-block"
+                >
                   Beranda
                 </Link>
               </li>
               <li>
-                <Link href="#tentang" className="text-gray-400 hover:text-white transition-colors inline-block">
+                <Link
+                  href="#tentang"
+                  className="text-gray-400 hover:text-white transition-colors inline-block"
+                >
                   Tentang Kami
                 </Link>
               </li>
               <li>
-                <Link href="#area" className="text-gray-400 hover:text-white transition-colors inline-block">
+                <Link
+                  href="#area"
+                  className="text-gray-400 hover:text-white transition-colors inline-block"
+                >
                   Area Layanan
                 </Link>
               </li>
               <li>
-                <Link href="#harga" className="text-gray-400 hover:text-white transition-colors inline-block">
+                <Link
+                  href="#harga"
+                  className="text-gray-400 hover:text-white transition-colors inline-block"
+                >
                   Estimasi Biaya
                 </Link>
               </li>
               <li>
-                <Link href="#faq" className="text-gray-400 hover:text-white transition-colors inline-block">
+                <Link
+                  href="#faq"
+                  className="text-gray-400 hover:text-white transition-colors inline-block"
+                >
                   FAQ
                 </Link>
               </li>
@@ -162,7 +212,10 @@ export default function Footer() {
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-900/30 mr-3">
                   <MapPin className="h-5 w-5 text-indigo-400" />
                 </div>
-                <span>Jl. Gn. Atena I No.11a, Padangsambian Klod, Kota Denpasar, Bali 80361</span>
+                <span>
+                  Jl. Gn. Atena I No.11a, Padangsambian Klod, Kota Denpasar,
+                  Bali 80361
+                </span>
               </li>
             </ul>
           </motion.div>
@@ -174,7 +227,10 @@ export default function Footer() {
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          <p className="text-gray-400">© {new Date().getFullYear()} ServiceMicrowaveDenpasar. Hak Cipta Dilindungi.</p>
+          <p className="text-gray-400">
+            © {new Date().getFullYear()} Service Microwave Denpasar. Hak Cipta
+            Dilindungi.
+          </p>
           <div className="mt-4 md:mt-0">
             <button
               onClick={scrollToTop}
@@ -186,5 +242,5 @@ export default function Footer() {
         </motion.div>
       </div>
     </footer>
-  )
+  );
 }

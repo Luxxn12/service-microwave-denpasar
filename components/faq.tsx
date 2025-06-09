@@ -1,19 +1,18 @@
-"use client"
+"use client";
 
-import { useRef } from "react"
-import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion"
+} from "@/components/ui/accordion";
 
 export default function Faq() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   const faqs = [
     {
@@ -34,9 +33,9 @@ export default function Faq() {
     {
       question: "Bagaimana cara memesan layanan perbaikan microwave?",
       answer:
-        "Anda dapat memesan layanan perbaikan microwave melalui beberapa cara: menghubungi kami di nomor telepon/WhatsApp 085737655537, mengisi formulir pemesanan di website kami, atau mengirim email ke info@ServiceMicrowaveDenpasar.com. Setelah itu, kami akan menghubungi Anda untuk konfirmasi jadwal kunjungan teknisi.",
+        "Anda dapat memesan layanan perbaikan microwave melalui beberapa cara: menghubungi kami di nomor telepon/WhatsApp 085737655537, mengisi formulir pemesanan di website kami, atau mengirim email ke servicemicrowavedenpasar@gmail.com. Setelah itu, kami akan menghubungi Anda untuk konfirmasi jadwal kunjungan teknisi.",
     },
-  ]
+  ];
 
   const container = {
     hidden: { opacity: 0 },
@@ -46,12 +45,12 @@ export default function Faq() {
         staggerChildren: 0.1,
       },
     },
-  }
+  };
 
   const item = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  }
+  };
 
   return (
     <section
@@ -77,7 +76,8 @@ export default function Faq() {
               Pertanyaan Umum
             </h2>
             <p className="max-w-[900px] text-gray-500 dark:text-gray-400 text-sm sm:text-base md:text-lg">
-              Temukan jawaban untuk pertanyaan yang sering diajukan tentang layanan kami.
+              Temukan jawaban untuk pertanyaan yang sering diajukan tentang
+              layanan kami.
             </p>
           </div>
         </motion.div>
@@ -108,5 +108,5 @@ export default function Faq() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
