@@ -27,7 +27,7 @@ export default function FloatingContact() {
           >
             <Button
               size="lg"
-              className="bg-green-500 hover:bg-green-600 text-white rounded-full flex items-center gap-2 shadow-lg"
+              className="flex items-center gap-2 rounded-full bg-green-500 text-white shadow-lg hover:bg-green-600"
               asChild
             >
               <a href={waUrl} target="_blank" rel="noopener noreferrer">
@@ -37,7 +37,7 @@ export default function FloatingContact() {
             </Button>
             <Button
               size="lg"
-              className="bg-blue-600 hover:bg-blue-700 text-white rounded-full flex items-center gap-2 shadow-lg"
+              className="flex items-center gap-2 rounded-full bg-[#102544] text-[#f0cf72] shadow-lg hover:bg-[#18345d]"
               asChild
             >
               <a href="tel:+6285737655537">
@@ -50,7 +50,7 @@ export default function FloatingContact() {
       </AnimatePresence>
 
       <motion.button
-        className="w-14 h-14 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white flex items-center justify-center shadow-lg"
+        className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-r from-[#c7921b] to-[#f0cf72] text-[#102544] shadow-[0_16px_32px_rgba(214,167,47,0.32)]"
         onClick={() => setIsOpen(!isOpen)}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}

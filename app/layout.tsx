@@ -1,10 +1,18 @@
 import type React from "react";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Oswald, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
-const inter = Inter({ subsets: ["latin"] });
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
+
+const oswald = Oswald({
+  subsets: ["latin"],
+  variable: "--font-display",
+});
 
 export const metadata: Metadata = {
   title: "Service Microwave Denpasar - Cepat & Terpercaya",
@@ -64,24 +72,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" suppressHydrationWarning>
-      <Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              url: "https://www.servicemicrowavedenpasar.com",
-              logo: "https://www.servicemicrowavedenpasar.com/logo.png",
-              name: "Service Microwave Denpasar",
-              description:
-                "Jasa service microwave terpercaya di Denpasar Bali. Teknisi handal dan bergaransi.",
-            }),
-          }} 
-        />
-      </Head>
-      <body className={inter.className}>
+    <html
+      lang="id"
+      suppressHydrationWarning
+      className={`${plusJakartaSans.variable} ${oswald.variable}`}
+    >
+      <body className={plusJakartaSans.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           {children}
         </ThemeProvider>
@@ -89,6 +85,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-import "./globals.css";
-import Head from "next/head";

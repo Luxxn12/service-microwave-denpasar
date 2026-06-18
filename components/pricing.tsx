@@ -24,7 +24,7 @@ export default function Pricing() {
       price: "Rp 50.000",
       description: "Biaya ini akan dimasukkan ke dalam total biaya perbaikan jika dilanjutkan.",
       features: ["Diagnosis kerusakan", "Estimasi biaya perbaikan", "Konsultasi dengan teknisi"],
-      color: "from-blue-500 to-blue-600",
+      color: "from-[#102544] to-[#22456f]",
       popular: false,
     },
     {
@@ -32,7 +32,7 @@ export default function Pricing() {
       price: "Rp 150.000 - Rp 300.000",
       description: "Untuk kerusakan ringan yang tidak memerlukan penggantian komponen utama.",
       features: ["Perbaikan dalam 1-2 jam", "Garansi 1 bulan", "Termasuk biaya pengecekan", "Pembersihan unit"],
-      color: "from-purple-500 to-purple-600",
+      color: "from-[#c7921b] to-[#f0cf72]",
       popular: true,
     },
     {
@@ -46,7 +46,7 @@ export default function Pricing() {
         "Pembersihan unit",
         "Penggantian komponen",
       ],
-      color: "from-indigo-500 to-indigo-600",
+      color: "from-[#18365f] to-[#3b6794]",
       popular: false,
     },
     {
@@ -61,7 +61,7 @@ export default function Pricing() {
         "Penggantian komponen utama",
         "Kalibrasi ulang",
       ],
-      color: "from-cyan-500 to-cyan-600",
+      color: "from-[#b78218] to-[#ebc965]",
       popular: false,
     },
   ]
@@ -82,9 +82,9 @@ export default function Pricing() {
   }
 
   return (
-    <section id="harga" className="w-full py-12 md:py-24 lg:py-32 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-blue-100/50 dark:bg-blue-900/20 rounded-full blur-3xl opacity-70 -z-10" />
-      <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-purple-100/50 dark:bg-purple-900/20 rounded-full blur-3xl opacity-70 -z-10" />
+    <section id="harga" className="relative w-full overflow-hidden py-12 md:py-24 lg:py-32">
+      <div className="absolute right-0 top-0 h-72 w-72 rounded-full bg-[#12315c]/10 blur-3xl opacity-70 -z-10" />
+      <div className="absolute bottom-0 left-0 h-72 w-72 rounded-full bg-[#f0cf72]/16 blur-3xl opacity-70 -z-10" />
 
       <div className="container px-4 md:px-6" ref={ref}>
         <motion.div
@@ -94,13 +94,13 @@ export default function Pricing() {
           transition={{ duration: 0.5 }}
         >
           <div className="space-y-2">
-            <div className="inline-block rounded-lg bg-blue-100 dark:bg-blue-900/30 px-3 py-1 text-xs sm:text-sm text-blue-600 dark:text-blue-400 mb-2">
+            <div className="mb-2 inline-block rounded-full border border-[#d6a72f]/25 bg-[#fff6dc] px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#9f7514] dark:bg-[#18273d] dark:text-[#f0cf72] sm:text-sm">
               Harga Layanan
             </div>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tighter">
               Estimasi Biaya
             </h2>
-            <p className="max-w-[900px] text-sm sm:text-base md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed text-gray-500 dark:text-gray-400">
+            <p className="max-w-[900px] text-sm text-slate-600 dark:text-slate-300 sm:text-base md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Kami menawarkan harga yang transparan dan kompetitif untuk setiap jenis perbaikan.
             </p>
           </div>
@@ -121,14 +121,14 @@ export default function Pricing() {
             >
               {item.popular && (
                 <div className="absolute -top-4 inset-x-0 flex justify-center">
-                  <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-1 rounded-full text-xs sm:text-sm font-medium shadow-lg">
+                  <div className="rounded-full bg-gradient-to-r from-[#c7921b] to-[#f0cf72] px-3 py-1 text-xs font-medium text-[#102544] shadow-lg sm:text-sm">
                     Paling Populer
                   </div>
                 </div>
               )}
               <Card
-                className={`flex flex-col h-full border-0 shadow-lg ${
-                  item.popular ? "shadow-blue-100 dark:shadow-blue-900/20" : ""
+                className={`flex h-full flex-col rounded-[28px] border border-white/70 bg-white/92 shadow-lg ${
+                  item.popular ? "shadow-[0_28px_70px_rgba(214,167,47,0.18)]" : ""
                 }`}
               >
                 <div className={`h-2 w-full bg-gradient-to-r ${item.color}`} />
@@ -139,22 +139,27 @@ export default function Pricing() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-1">
-                  <p className="text-sm sm:text-base text-gray-500 dark:text-gray-400 mb-4">
+                  <p className="mb-4 text-sm text-slate-600 dark:text-slate-300 sm:text-base">
                     {item.description}
                   </p>
                   <ul className="space-y-2">
                     {item.features.map((feature, i) => (
                       <li key={i} className="flex items-center text-sm sm:text-base">
-                        <div className="mr-2 flex h-5 w-5 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/30">
-                          <Check className="h-3 w-3 text-blue-600 dark:text-blue-400" />
+                        <div className="mr-2 flex h-5 w-5 items-center justify-center rounded-full bg-[#102544]">
+                          <Check className="h-3 w-3 text-[#f0cf72]" />
                         </div>
-                        <span className="text-gray-600 dark:text-gray-300">{feature}</span>
+                        <span className="text-slate-600 dark:text-slate-300">{feature}</span>
                       </li>
                     ))}
                   </ul>
                 </CardContent>
                 <CardFooter>
-                  <Button className={`w-full bg-gradient-to-r ${item.color} hover:opacity-90 text-white group`} asChild>
+                  <Button
+                    className={`group w-full rounded-full bg-gradient-to-r ${item.color} font-semibold ${
+                      item.popular ? "text-[#102544]" : "text-white"
+                    } hover:opacity-90`}
+                    asChild
+                  >
                     <a href="#kontak" className="flex items-center justify-center text-sm sm:text-base">
                       Hubungi Sekarang
                       <motion.span initial={{ x: 0 }} whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
@@ -169,7 +174,7 @@ export default function Pricing() {
         </motion.div>
 
         <motion.div
-          className="mt-8 text-center text-xs sm:text-sm text-gray-500 dark:text-gray-400"
+          className="mt-8 text-center text-xs text-slate-500 dark:text-slate-400 sm:text-sm"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}

@@ -9,7 +9,6 @@ import {
   MapPin,
   Send,
   CheckCircle,
-  AlertCircle,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
@@ -113,8 +112,8 @@ export default function Contact() {
   const LocationMap = dynamic(() => import("@/components/location-map"), {
     ssr: false,
     loading: () => (
-      <div className="w-full h-[300px] bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-center">
-        <p className="text-gray-500 dark:text-gray-400">Loading map...</p>
+      <div className="flex h-[300px] w-full items-center justify-center rounded-[24px] bg-slate-100 dark:bg-slate-900">
+        <p className="text-slate-500 dark:text-slate-400">Loading map...</p>
       </div>
     ),
   });
@@ -122,11 +121,10 @@ export default function Contact() {
   return (
     <section
       id="kontak"
-      className="w-full py-12 md:py-24 lg:py-32 bg-gray-50/50 dark:bg-gray-900/20 relative overflow-hidden"
+      className="relative w-full overflow-hidden bg-[#f7fbff]/70 py-12 md:py-24 lg:py-32 dark:bg-slate-950/20"
     >
-      {/* Background elements */}
-      <div className="absolute top-0 left-0 w-1/3 h-1/3 bg-blue-100/50 dark:bg-blue-900/20 rounded-full blur-3xl opacity-70 -z-10" />
-      <div className="absolute bottom-0 right-0 w-1/3 h-1/3 bg-purple-100/50 dark:bg-purple-900/20 rounded-full blur-3xl opacity-70 -z-10" />
+      <div className="absolute left-0 top-0 h-72 w-72 rounded-full bg-[#f0cf72]/16 blur-3xl opacity-70 -z-10" />
+      <div className="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-[#12315c]/10 blur-3xl opacity-70 -z-10" />
 
       <div className="container px-4 md:px-6" ref={ref}>
         <motion.div
@@ -136,15 +134,15 @@ export default function Contact() {
           transition={{ duration: 0.5 }}
         >
           <div className="space-y-2">
-            <div className="inline-block rounded-lg bg-blue-100 dark:bg-blue-900/30 px-3 py-1 text-sm text-blue-600 dark:text-blue-400 mb-2">
+            <div className="mb-2 inline-block rounded-full border border-[#d6a72f]/25 bg-[#fff6dc] px-4 py-1 text-sm font-semibold text-[#9f7514] dark:bg-[#18273d] dark:text-[#f0cf72]">
               Hubungi Kami
             </div>
             <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl">
               Hubungi Kami
             </h2>
-            <p className="max-w-[900px] text-gray-500 dark:text-gray-400 text-sm md:text-base/relaxed lg:text-sm/relaxed xl:text-base/relaxed">
-              Butuh bantuan perbaikan microwave? Hubungi kami sekarang untuk
-              layanan cepat dan profesional.
+            <p className="max-w-[900px] text-sm text-slate-600 dark:text-slate-300 md:text-base/relaxed lg:text-sm/relaxed xl:text-base/relaxed">
+              Butuh bantuan perbaikan microwave? Hubungi kami sekarang untuk layanan cepat, profesional, dan nyaman
+              untuk pelanggan lokal maupun turis yang tinggal di Bali.
             </p>
           </div>
         </motion.div>
@@ -157,7 +155,7 @@ export default function Contact() {
             animate={isInView ? "show" : "hidden"}
           >
             <motion.div variants={item}>
-              <Card className="border-0 shadow-lg bg-white dark:bg-gray-800">
+              <Card className="rounded-[28px] border border-white/70 bg-white/92 shadow-lg dark:border-white/10 dark:bg-slate-900/88">
                 <CardHeader>
                   <CardTitle>Informasi Kontak</CardTitle>
                   <CardDescription>
@@ -166,34 +164,34 @@ export default function Contact() {
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div className="flex items-center space-x-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/30">
-                      <Phone className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#102544]">
+                      <Phone className="h-6 w-6 text-[#f0cf72]" />
                     </div>
                     <div>
                       <p className="font-medium text-sm">Telepon / WhatsApp</p>
-                      <p className="text-gray-500 dark:text-gray-400 text-xs">
+                      <p className="text-xs text-slate-500 dark:text-slate-400">
                         085737655537
                       </p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-purple-100 dark:bg-purple-900/30">
-                      <Mail className="h-6 w-6 text-purple-600 dark:text-purple-400" />
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#f8edd0]">
+                      <Mail className="h-6 w-6 text-[#b88415]" />
                     </div>
                     <div>
                       <p className="font-medium text-sm">Email</p>
-                      <p className="text-gray-500 dark:text-gray-400 text-xs">
+                      <p className="text-xs text-slate-500 dark:text-slate-400">
                         servicemicrowavedenpasar@gmail.com
                       </p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-indigo-100 dark:bg-indigo-900/30">
-                      <MapPin className="h-6 w-6 text-indigo-600 dark:text-indigo-400" />
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#f8edd0]">
+                      <MapPin className="h-6 w-6 text-[#b88415]" />
                     </div>
                     <div>
                       <p className="font-medium text-sm">Alamat</p>
-                      <p className="text-gray-500 dark:text-gray-400 text-xs">
+                      <p className="text-xs text-slate-500 dark:text-slate-400">
                         Jl. Gn. Atena I No.11a, Padangsambian Klod, Kota
                         Denpasar, Bali 80361
                       </p>
@@ -204,17 +202,17 @@ export default function Contact() {
             </motion.div>
 
             <motion.div variants={item}>
-              <Card className="border-0 shadow-lg bg-white dark:bg-gray-800">
+              <Card className="rounded-[28px] border border-white/70 bg-white/92 shadow-lg dark:border-white/10 dark:bg-slate-900/88">
                 <CardHeader>
                   <CardTitle>Jam Operasional</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
-                    <div className="flex justify-between items-center pb-2 border-b border-gray-100 dark:border-gray-700">
+                    <div className="flex items-center justify-between border-b border-slate-100 pb-2 dark:border-slate-800">
                       <span>Senin - Jumat</span>
                       <span className="font-medium">08:00 - 20:00</span>
                     </div>
-                    <div className="flex justify-between items-center pb-2 border-b border-gray-100 dark:border-gray-700">
+                    <div className="flex items-center justify-between border-b border-slate-100 pb-2 dark:border-slate-800">
                       <span>Sabtu</span>
                       <span className="font-medium">09:00 - 18:00</span>
                     </div>
@@ -233,7 +231,7 @@ export default function Contact() {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <Card className="border-0 shadow-lg bg-white dark:bg-gray-800 h-full">
+            <Card className="h-full rounded-[28px] border border-white/70 bg-white/92 shadow-lg dark:border-white/10 dark:bg-slate-900/88">
               <CardHeader>
                 <CardTitle>Formulir Pemesanan</CardTitle>
                 <CardDescription>
@@ -249,11 +247,11 @@ export default function Contact() {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="w-16 h-16 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mb-4">
+                    <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[#edf7ef] dark:bg-green-900/30">
                       <CheckCircle className="h-8 w-8 text-green-600 dark:text-green-400" />
                     </div>
                     <h3 className="text-xl font-bold mb-2">Pesan Terkirim!</h3>
-                    <p className="text-gray-500 dark:text-gray-400">
+                    <p className="text-slate-500 dark:text-slate-400">
                       Terima kasih telah menghubungi kami. Tim kami akan segera
                       menghubungi Anda.
                     </p>
@@ -271,7 +269,7 @@ export default function Contact() {
                         value={formData.from_name}
                         onChange={handleChange}
                         required
-                        className="border-gray-200 dark:border-gray-700 focus:border-blue-500 focus:ring-blue-500"
+                        className="rounded-2xl border-slate-200 bg-white/90 focus-visible:ring-[#d6a72f] dark:border-slate-700 dark:bg-slate-950/60"
                       />
                     </div>
                     <div className="space-y-2">
@@ -286,7 +284,7 @@ export default function Contact() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="border-gray-200 dark:border-gray-700 focus:border-blue-500 focus:ring-blue-500"
+                        className="rounded-2xl border-slate-200 bg-white/90 focus-visible:ring-[#d6a72f] dark:border-slate-700 dark:bg-slate-950/60"
                       />
                     </div>
                     <div className="space-y-2">
@@ -301,12 +299,12 @@ export default function Contact() {
                         value={formData.message}
                         onChange={handleChange}
                         required
-                        className="min-h-[120px] border-gray-200 dark:border-gray-700 focus:border-blue-500 focus:ring-blue-500"
+                        className="min-h-[120px] rounded-2xl border-slate-200 bg-white/90 focus-visible:ring-[#d6a72f] dark:border-slate-700 dark:bg-slate-950/60"
                       />
                     </div>
                     <Button
                       type="submit"
-                      className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+                      className="w-full rounded-full bg-gradient-to-r from-[#c7921b] to-[#f0cf72] font-semibold text-[#102544] hover:brightness-105"
                       disabled={loading}
                     >
                       {loading ? (
@@ -329,7 +327,7 @@ export default function Contact() {
         </div>
         <div className="mt-7">
         <motion.div variants={item}>
-          <Card className="border-0 shadow-lg bg-white dark:bg-gray-800">
+          <Card className="rounded-[28px] border border-white/70 bg-white/92 shadow-lg dark:border-white/10 dark:bg-slate-900/88">
             <CardHeader>
               <CardTitle>Lokasi Kami</CardTitle>
               <CardDescription>

@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { CheckCircle, Award, Shield, Clock } from "lucide-react"
+import { CheckCircle, Shield, Clock, Gem } from "lucide-react"
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
@@ -50,10 +50,9 @@ export default function About() {
   }
 
   return (
-    <section id="tentang" className="w-full py-12 md:py-24 lg:py-32 relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-blue-100/50 dark:bg-blue-900/20 rounded-full blur-3xl -z-10" />
-      <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-purple-100/50 dark:bg-purple-900/20 rounded-full blur-3xl -z-10" />
+    <section id="tentang" className="relative w-full overflow-hidden py-14 md:py-24 lg:py-28">
+      <div className="absolute right-0 top-12 h-56 w-56 rounded-full bg-[#f0cf72]/18 blur-3xl" />
+      <div className="absolute bottom-0 left-0 h-56 w-56 rounded-full bg-[#214574]/12 blur-3xl" />
 
       <div className="container px-4 md:px-6" ref={ref}>
         <motion.div
@@ -63,15 +62,15 @@ export default function About() {
           transition={{ duration: 0.5 }}
         >
           <div className="space-y-2">
-            <div className="inline-block rounded-lg bg-blue-100 dark:bg-blue-900/30 px-3 py-1 text-xs sm:text-sm text-blue-600 dark:text-blue-400 mb-2">
+            <div className="mb-2 inline-block rounded-full border border-[#d6a72f]/25 bg-[#fff6dc] px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#9f7514] dark:bg-[#18273d] dark:text-[#f0cf72]">
               Tentang Kami
             </div>
-            <h2 className="text-xl sm:text-2xl md:text-4xl font-bold tracking-tight">
-              Solusi Terbaik untuk Microwave Anda
+            <h2 className="text-xl font-bold tracking-tight sm:text-2xl md:text-4xl">
+              Teknisi yang rapi, cepat, dan enak diajak komunikasi
             </h2>
-            <p className="max-w-[900px] text-sm sm:text-base md:text-lg text-gray-500 dark:text-gray-400">
-              Kami adalah tim teknisi profesional dengan pengalaman lebih dari 10 tahun dalam perbaikan microwave
-              berbagai merek di seluruh Bali.
+            <p className="max-w-[900px] text-sm text-slate-600 dark:text-slate-300 sm:text-base md:text-lg">
+              Kami melayani perbaikan microwave berbagai merek di Bali dengan pendekatan yang lebih profesional:
+              diagnosa jelas, pengerjaan rapi, dan komunikasi yang nyaman untuk pelanggan Indonesia maupun tamu asing.
             </p>
           </div>
         </motion.div>
@@ -83,8 +82,8 @@ export default function About() {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/20 dark:to-purple-900/20 rounded-3xl blur-xl opacity-70 -z-10" />
-            <div className="relative overflow-hidden rounded-3xl shadow-xl">
+            <div className="absolute inset-0 -z-10 rounded-[34px] bg-gradient-to-br from-[#102544]/10 via-[#f0cf72]/10 to-white blur-xl" />
+            <div className="relative overflow-hidden rounded-[30px] border border-white/50 bg-white shadow-[0_22px_50px_rgba(18,34,64,0.12)] dark:border-white/10 dark:bg-slate-900">
               <Image
                 src={heroIcon}
                 alt="Tim Teknisi"
@@ -102,31 +101,35 @@ export default function About() {
             animate={isInView ? "show" : "hidden"}
           >
             <motion.div variants={item}>
-              <h3 className="text-lg sm:text-xl font-bold">Mengapa Memilih Kami?</h3>
+              <h3 className="text-lg font-bold sm:text-xl">Mengapa banyak pelanggan memilih kami?</h3>
             </motion.div>
 
             <motion.ul className="space-y-6" variants={container}>
               {features.map((feature, index) => (
                 <motion.li key={index} className="flex items-start" variants={item}>
-                  <div className="mr-4 flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/30">
+                  <div className="mr-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-[#102544] shadow-lg">
                     {feature.icon}
                   </div>
                   <div>
-                    <h4 className="font-semibold text-sm sm:text-base">{feature.title}</h4>
-                    <p className="text-sm sm:text-base text-gray-500 dark:text-gray-400">{feature.description}</p>
+                    <h4 className="text-sm font-semibold sm:text-base">{feature.title}</h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-300 sm:text-base">{feature.description}</p>
                   </div>
                 </motion.li>
               ))}
             </motion.ul>
 
             <motion.div className="flex flex-wrap gap-4 mt-6" variants={item}>
-              <div className="flex items-center space-x-2 bg-purple-50 dark:bg-purple-900/20 p-3 rounded-lg">
-                <Shield className="h-6 w-6 sm:h-8 sm:w-8 text-purple-500" />
+              <div className="flex items-center space-x-2 rounded-2xl border border-[#d6a72f]/25 bg-[#fff7e1] p-3 dark:bg-[#1b2b43]">
+                <Shield className="h-6 w-6 text-[#c28d17] sm:h-8 sm:w-8" />
                 <span className="text-sm sm:text-base font-medium">Terpercaya</span>
               </div>
-              <div className="flex items-center space-x-2 bg-green-50 dark:bg-green-900/20 p-3 rounded-lg">
-                <Clock className="h-6 w-6 sm:h-8 sm:w-8 text-green-500" />
+              <div className="flex items-center space-x-2 rounded-2xl border border-slate-200 bg-white p-3 dark:border-white/10 dark:bg-slate-900">
+                <Clock className="h-6 w-6 text-[#102544] sm:h-8 sm:w-8 dark:text-[#f0cf72]" />
                 <span className="text-sm sm:text-base font-medium">Tepat Waktu</span>
+              </div>
+              <div className="flex items-center space-x-2 rounded-2xl border border-slate-200 bg-white p-3 dark:border-white/10 dark:bg-slate-900">
+                <Gem className="h-6 w-6 text-[#102544] sm:h-8 sm:w-8 dark:text-[#f0cf72]" />
+                <span className="text-sm font-medium sm:text-base">Tampilan lebih premium</span>
               </div>
             </motion.div>
           </motion.div>

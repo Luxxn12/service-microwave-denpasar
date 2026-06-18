@@ -65,12 +65,11 @@ export default function Testimonials() {
   return (
     <section
       id="testimoni"
-      className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-blue-50/50 to-purple-50/50 dark:from-gray-900 dark:to-gray-900/80 relative overflow-hidden"
+      className="relative w-full overflow-hidden bg-gradient-to-b from-[#f7fbff] to-[#eef4fb] py-12 md:py-24 lg:py-32 dark:from-[#0d1d36] dark:to-[#122742]"
     >
-      {/* Background elements */}
       <div className="absolute top-0 left-0 w-full h-full">
-        <div className="absolute top-10 left-10 w-20 h-20 bg-blue-200 dark:bg-blue-900/30 rounded-full blur-3xl opacity-70" />
-        <div className="absolute bottom-10 right-10 w-20 h-20 bg-purple-200 dark:bg-purple-900/30 rounded-full blur-3xl opacity-70" />
+        <div className="absolute left-10 top-10 h-20 w-20 rounded-full bg-[#f0cf72]/26 blur-3xl opacity-70" />
+        <div className="absolute bottom-10 right-10 h-20 w-20 rounded-full bg-[#12315c]/16 blur-3xl opacity-70" />
       </div>
 
       <div className="container px-4 md:px-6 relative" ref={ref}>
@@ -81,11 +80,11 @@ export default function Testimonials() {
           transition={{ duration: 0.5 }}
         >
           <div className="space-y-2">
-            <div className="inline-block rounded-lg bg-blue-100 dark:bg-blue-900/30 px-3 py-1 text-xs sm:text-sm text-blue-600 dark:text-blue-400 mb-2">
+            <div className="mb-2 inline-block rounded-full border border-[#d6a72f]/25 bg-[#fff6dc] px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#9f7514] dark:bg-[#18273d] dark:text-[#f0cf72] sm:text-sm">
               Apa Kata Mereka
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter">Testimoni Pelanggan</h2>
-            <p className="max-w-[900px] text-sm sm:text-base md:text-xl text-gray-500 dark:text-gray-400">
+            <p className="max-w-[900px] text-sm text-slate-600 dark:text-slate-300 sm:text-base md:text-xl">
               Apa kata pelanggan kami tentang layanan perbaikan microwave yang kami berikan.
             </p>
           </div>
@@ -99,9 +98,9 @@ export default function Testimonials() {
         >
           {testimonials.map((testimonial, index) => (
             <motion.div key={index} variants={item} whileHover={{ y: -10, transition: { duration: 0.2 } }}>
-              <Card className="h-full border-0 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all">
+              <Card className="h-full rounded-[28px] border border-white/70 bg-white/88 shadow-lg backdrop-blur-sm transition-all hover:shadow-xl dark:border-white/10 dark:bg-slate-900/82">
                 <CardHeader className="pb-2 relative">
-                  <Quote className="absolute top-4 right-4 h-6 w-6 sm:h-8 sm:w-8 text-blue-100 dark:text-gray-700" />
+                  <Quote className="absolute right-4 top-4 h-6 w-6 text-[#f0cf72]/45 sm:h-8 sm:w-8" />
                   <div className="flex items-center gap-0.5">
                     {Array(testimonial.rating)
                       .fill(null)
@@ -116,7 +115,7 @@ export default function Testimonials() {
                   </div>
                 </CardHeader>
                 <CardContent className="pb-2">
-                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 italic">
+                  <p className="text-sm italic text-slate-600 dark:text-slate-300 sm:text-base">
                     "{testimonial.comment}"
                   </p>
                 </CardContent>

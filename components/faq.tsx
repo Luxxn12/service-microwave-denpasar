@@ -55,11 +55,10 @@ export default function Faq() {
   return (
     <section
       id="faq"
-      className="w-full py-12 md:py-24 lg:py-32 relative overflow-hidden"
+      className="relative w-full overflow-hidden py-12 md:py-24 lg:py-32"
     >
-      {/* Background */}
-      <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-blue-100/50 dark:bg-blue-900/20 rounded-full blur-3xl opacity-70 -z-10" />
-      <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-purple-100/50 dark:bg-purple-900/20 rounded-full blur-3xl opacity-70 -z-10" />
+      <div className="absolute right-0 top-0 h-64 w-64 rounded-full bg-[#12315c]/10 blur-3xl opacity-70 -z-10" />
+      <div className="absolute bottom-0 left-0 h-64 w-64 rounded-full bg-[#f0cf72]/16 blur-3xl opacity-70 -z-10" />
 
       <div className="container px-4 md:px-6" ref={ref}>
         <motion.div
@@ -69,13 +68,13 @@ export default function Faq() {
           transition={{ duration: 0.5 }}
         >
           <div className="space-y-2">
-            <div className="inline-block rounded-lg bg-blue-100 dark:bg-blue-900/30 px-3 py-1 text-sm text-blue-600 dark:text-blue-400 mb-2">
+            <div className="mb-2 inline-block rounded-full border border-[#d6a72f]/25 bg-[#fff6dc] px-4 py-1 text-sm font-semibold text-[#9f7514] dark:bg-[#18273d] dark:text-[#f0cf72]">
               FAQ
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter">
               Pertanyaan Umum
             </h2>
-            <p className="max-w-[900px] text-gray-500 dark:text-gray-400 text-sm sm:text-base md:text-lg">
+            <p className="max-w-[900px] text-sm text-slate-600 dark:text-slate-300 sm:text-base md:text-lg">
               Temukan jawaban untuk pertanyaan yang sering diajukan tentang
               layanan kami.
             </p>
@@ -88,17 +87,21 @@ export default function Faq() {
           initial="hidden"
           animate={isInView ? "show" : "hidden"}
         >
-          <Accordion type="single" collapsible className="w-full">
+          <Accordion
+            type="single"
+            collapsible
+            className="w-full rounded-[28px] border border-white/70 bg-white/92 p-4 shadow-lg dark:border-white/10 dark:bg-slate-900/88"
+          >
             {faqs.map((faq, index) => (
               <motion.div key={index} variants={item}>
                 <AccordionItem
                   value={`item-${index}`}
-                  className="border-b border-gray-200 dark:border-gray-700"
+                  className="border-b border-slate-200 dark:border-slate-800"
                 >
-                  <AccordionTrigger className="text-left text-sm sm:text-base font-medium py-4 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                  <AccordionTrigger className="py-4 text-left text-sm font-medium transition-colors hover:text-[#b88415] dark:hover:text-[#f0cf72] sm:text-base">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-gray-600 dark:text-gray-300 text-xs sm:text-base">
+                  <AccordionContent className="text-xs text-slate-600 dark:text-slate-300 sm:text-base">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>

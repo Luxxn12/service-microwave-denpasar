@@ -47,10 +47,9 @@ export default function ServiceAreas() {
   return (
     <section
       id="area"
-      className="w-full py-12 md:py-24 lg:py-32 relative overflow-hidden"
+      className="relative w-full overflow-hidden py-12 md:py-24 lg:py-32"
     >
-      {/* Background elements */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-1/2 bg-gradient-to-b from-blue-50/50 to-purple-50/50 dark:from-blue-900/10 dark:to-purple-900/10 rounded-full blur-3xl -z-10" />
+      <div className="absolute left-1/2 top-1/2 -z-10 h-1/2 w-full -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-b from-[#12315c]/8 to-[#e6c062]/10 blur-3xl" />
 
       <div className="container px-4 md:px-6" ref={ref}>
         <motion.div
@@ -60,13 +59,13 @@ export default function ServiceAreas() {
           transition={{ duration: 0.5 }}
         >
           <div className="space-y-2">
-            <div className="inline-block rounded-lg bg-blue-100 dark:bg-blue-900/30 px-3 py-1 text-sm text-blue-600 dark:text-blue-400 mb-2">
+            <div className="mb-2 inline-block rounded-full border border-[#d6a72f]/25 bg-[#fff6dc] px-4 py-1 text-sm font-semibold text-[#9f7514] dark:bg-[#18273d] dark:text-[#f0cf72]">
               Jangkauan Kami
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter">
               Area Layanan
             </h2>
-            <p className="max-w-[900px] text-sm md:text-lg lg:text-xl text-gray-500 dark:text-gray-400">
+            <p className="max-w-[900px] text-sm text-slate-600 dark:text-slate-300 md:text-lg lg:text-xl">
               Kami melayani perbaikan microwave di seluruh wilayah Bali.
             </p>
           </div>
@@ -83,12 +82,12 @@ export default function ServiceAreas() {
               {areas.map((area, index) => (
                 <motion.div
                   key={index}
-                  className="flex items-center space-x-2 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-md hover:shadow-lg transition-all"
+                  className="flex items-center space-x-2 rounded-2xl border border-white/70 bg-white/92 p-4 shadow-md transition-all hover:shadow-lg dark:border-white/10 dark:bg-slate-900/88"
                   variants={item}
                   whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
                 >
-                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30">
-                    <MapPin className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#102544]">
+                    <MapPin className="h-4 w-4 text-[#f0cf72]" />
                   </div>
                   <span className="font-medium text-sm md:text-base ">{area}</span>
                 </motion.div>
@@ -103,8 +102,8 @@ export default function ServiceAreas() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/20 dark:to-purple-900/20 rounded-3xl blur-xl opacity-70 -z-10" />
-              <div className="relative overflow-hidden rounded-3xl shadow-xl">
+              <div className="absolute inset-0 -z-10 rounded-[34px] bg-gradient-to-br from-[#102544]/12 to-[#f0cf72]/12 blur-xl" />
+              <div className="relative overflow-hidden rounded-[30px] border border-white/70 bg-white shadow-xl dark:border-white/10 dark:bg-slate-900">
                 <Image
                   src={baliPeta}
                   alt="Peta Area Layanan"
