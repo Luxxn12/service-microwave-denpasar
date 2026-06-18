@@ -4,7 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, BadgeCheck, Clock3, Globe2, ShieldCheck, Star } from "lucide-react"
 import { motion } from "framer-motion"
-import heroImage from "/public/hero-generated.png"
+import heroImage from "../public/hero-generated.png"
 import { Button } from "@/components/ui/button"
 
 export default function Hero() {
